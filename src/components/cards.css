@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaScriptCSS - Ultra Advanced Cards</title>
+    <style>
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED CARDS SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== CARD BASE STYLES ==================== */
+        .aq-card {
+            /* Layout */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            
+            /* Sizing */
+            width: 100%;
+            max-width: 100%;
+            
+            /* Borders & Effects */
+            border-radius: var(--aqua-radius-xl);
+            border: 1px solid var(--aqua-border-primary);
+            background: var(--aqua-bg-primary);
+            box-shadow: var(--aqua-shadow-md);
+            overflow: hidden;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) var(--aqua-transition-ease-out);
+            transform: translateY(0) scale(1);
+            
+            /* Content */
+            color: var(--aqua-text-primary);
+            
+            /* Performance */
+            will-change: transform, box-shadow;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+
+        /* ==================== CARD STATES ==================== */
+        .aq-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: var(--aqua-shadow-xl);
+            border-color: var(--aqua-primary-200);
+        }
+
+        .aq-card:active {
+            transform: translateY(-2px) scale(1.005);
+            box-shadow: var(--aqua-shadow-lg);
+        }
+
+        .aq-card:focus-within {
+            box-shadow: 
+                0 0 0 3px color-mix(in srgb, var(--aqua-primary-500) 20%, transparent),
+                var(--aqua-shadow-lg);
+        }
+
+        /* ==================== CARD ELEMENTS ==================== */
+        /* Card Image */
+        .aq-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: all var(--aqua-duration-500) var(--aqua-transition-ease-out);
+        }
+
+        .aq-card:hover .aq-card-img {
+            transform: scale(1.05);
+        }
+
+        /* Card Header */
+        .aq-card-header {
+            padding: var(--aqua-space-6) var(--aqua-space-6) 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-2);
+        }
+
+        /* Card Body */
+        .aq-card-body {
+            padding: var(--aqua-space-6);
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-4);
+        }
+
+        /* Card Footer */
+        .aq-card-footer {
+            padding: 0 var(--aqua-space-6) var(--aqua-space-6);
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-3);
+        }
+
+        /* ==================== CARD TYPOGRAPHY ==================== */
+        .aq-card-title {
+            font-size: var(--aqua-text-xl);
+            font-weight: var(--aqua-font-semibold);
+            color: var(--aqua-text-heading);
+            line-height: var(--aqua-leading-tight);
+            margin: 0;
+        }
+
+        .aq-card-subtitle {
+            font-size: var(--aqua-text-sm);
+            color: var(--aqua-text-secondary);
+            font-weight: var(--aqua-font-medium);
+            margin: 0;
+        }
+
+        .aq-card-text {
+            font-size: var(--aqua-text-base);
+            color: var(--aqua-text-primary);
+            line-height: var(--aqua-leading-relaxed);
+            margin: 0;
+        }
+
+        .aq-card-meta {
+            font-size: var(--aqua-text-sm);
+            color: var(--aqua-text-tertiary);
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-2);
+        }
+
+        /* ==================== CARD VARIANTS ==================== */
+        /* Elevated Card */
+        .aq-card.elevated {
+            box-shadow: var(--aqua-shadow-2xl);
+            border: none;
+        }
+
+        .aq-card.elevated:hover {
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px var(--aqua-primary-100);
+        }
+
+        /* Outline Card */
+        .aq-card.outline {
+            background: transparent;
+            border: 2px solid var(--aqua-border-primary);
+            box-shadow: none;
+        }
+
+        .aq-card.outline:hover {
+            border-color: var(--aqua-primary-300);
+            background: var(--aqua-bg-primary);
+            box-shadow: var(--aqua-shadow-md);
+        }
+
+        /* Filled Card */
+        .aq-card.filled {
+            background: var(--aqua-bg-secondary);
+            border: none;
+            box-shadow: none;
+        }
+
+        .aq-card.filled:hover {
+            background: var(--aqua-bg-tertiary);
+            box-shadow: var(--aqua-shadow-md);
+        }
+
+        /* Glass Card */
+        .aq-card.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+            backdrop-filter: blur(20px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .aq-card.glass:hover {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 90%, transparent);
+            backdrop-filter: blur(24px);
+            border-color: color-mix(in srgb, var(--aqua-primary-200) 40%, transparent);
+        }
+
+        /* Gradient Card */
+        .aq-card.gradient {
+            background: linear-gradient(135deg, 
+                var(--aqua-primary-50) 0%, 
+                var(--aqua-secondary-50) 100%);
+            border: none;
+            color: var(--aqua-primary-800);
+        }
+
+        .aq-card.gradient .aq-card-title {
+            color: var(--aqua-primary-900);
+        }
+
+        .aq-card.gradient .aq-card-subtitle {
+            color: var(--aqua-primary-700);
+        }
+
+        /* ==================== CARD SIZES ==================== */
+        .aq-card.sm {
+            max-width: 320px;
+        }
+
+        .aq-card.md {
+            max-width: 400px;
+        }
+
+        .aq-card.lg {
+            max-width: 500px;
+        }
+
+        .aq-card.xl {
+            max-width: 600px;
+        }
+
+        .aq-card.full {
+            max-width: 100%;
+        }
+
+        /* ==================== CARD WITH MEDIA ==================== */
+        /* Image position variants */
+        .aq-card.img-top .aq-card-img {
+            border-top-left-radius: var(--aqua-radius-xl);
+            border-top-right-radius: var(--aqua-radius-xl);
+        }
+
+        .aq-card.img-bottom .aq-card-img {
+            border-bottom-left-radius: var(--aqua-radius-xl);
+            border-bottom-right-radius: var(--aqua-radius-xl);
+            order: 2;
+        }
+
+        .aq-card.img-left {
+            flex-direction: row;
+        }
+
+        .aq-card.img-left .aq-card-img {
+            width: 40%;
+            height: auto;
+            border-top-left-radius: var(--aqua-radius-xl);
+            border-bottom-left-radius: var(--aqua-radius-xl);
+            border-top-right-radius: 0;
+        }
+
+        .aq-card.img-right {
+            flex-direction: row-reverse;
+        }
+
+        .aq-card.img-right .aq-card-img {
+            width: 40%;
+            height: auto;
+            border-top-right-radius: var(--aqua-radius-xl);
+            border-bottom-right-radius: var(--aqua-radius-xl);
+            border-top-left-radius: 0;
+        }
+
+        /* ==================== CARD ANIMATIONS ==================== */
+        /* Hover reveal effect */
+        .aq-card.hover-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-card.hover-reveal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.7));
+            opacity: 0;
+            transition: opacity var(--aqua-duration-300) ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .aq-card.hover-reveal:hover::before {
+            opacity: 1;
+        }
+
+        .aq-card.hover-reveal .aq-card-hover-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--aqua-space-6);
+            transform: translateY(100%);
+            transition: transform var(--aqua-duration-300) ease;
+            z-index: 2;
+            color: white;
+        }
+
+        .aq-card.hover-reveal:hover .aq-card-hover-content {
+            transform: translateY(0);
+        }
+
+        /* 3D flip animation */
+        .aq-card.flip {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform var(--aqua-duration-500) ease;
+        }
+
+        .aq-card.flip:hover {
+            transform: rotateY(15deg) rotateX(5deg);
+        }
+
+        /* Glow effect */
+        .aq-card.glow {
+            position: relative;
+        }
+
+        .aq-card.glow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                color-mix(in srgb, var(--aqua-primary-300) 10%, transparent) 50%,
+                transparent 100%);
+            opacity: 0;
+            transition: opacity var(--aqua-duration-300) ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .aq-card.glow:hover::after {
+            opacity: 1;
+        }
+
+        /* Staggered children animation */
+        .aq-card.stagger:hover .aq-card-header > *,
+        .aq-card.stagger:hover .aq-card-body > *,
+        .aq-card.stagger:hover .aq-card-footer > * {
+            animation: aq-card-stagger 0.6s ease forwards;
+        }
+
+        @keyframes aq-card-stagger {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .aq-card.stagger .aq-card-header > * {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .aq-card.stagger .aq-card-body > * {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .aq-card.stagger .aq-card-footer > * {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        /* ==================== CARD INTERACTIONS ==================== */
+        /* Clickable card */
+        .aq-card.clickable {
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-card.clickable:active {
+            transform: scale(0.98);
+        }
+
+        /* Draggable card */
+        .aq-card.draggable {
+            cursor: grab;
+            transition: transform var(--aqua-duration-200) ease;
+        }
+
+        .aq-card.draggable:active {
+            cursor: grabbing;
+            transform: scale(1.02) rotate(2deg);
+            box-shadow: var(--aqua-shadow-2xl);
+        }
+
+        /* ==================== CARD LAYOUTS ==================== */
+        /* Card group */
+        .aq-card-group {
+            display: grid;
+            gap: var(--aqua-space-6);
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .aq-card-group {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        /* Card grid */
+        .aq-card-grid {
+            display: grid;
+            gap: var(--aqua-space-6);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+
+        /* Card deck */
+        .aq-card-deck {
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-6);
+        }
+
+        @media (min-width: 768px) {
+            .aq-card-deck {
+                flex-direction: row;
+            }
+            
+            .aq-card-deck > .aq-card {
+                flex: 1;
+                min-width: 0;
+            }
+        }
+
+        /* ==================== CARD COMPONENTS ==================== */
+        /* Card badges */
+        .aq-card-badge {
+            position: absolute;
+            top: var(--aqua-space-3);
+            right: var(--aqua-space-3);
+            background: var(--aqua-primary-500);
+            color: white;
+            padding: var(--aqua-space-1) var(--aqua-space-3);
+            border-radius: var(--aqua-radius-full);
+            font-size: var(--aqua-text-xs);
+            font-weight: var(--aqua-font-semibold);
+            z-index: 10;
+            animation: aq-card-badge-pulse 2s infinite;
+        }
+
+        @keyframes aq-card-badge-pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 color-mix(in srgb, var(--aqua-primary-500) 70%, transparent);
+            }
+            70% {
+                box-shadow: 0 0 0 6px transparent;
+            }
+        }
+
+        /* Card actions */
+        .aq-card-actions {
+            display: flex;
+            gap: var(--aqua-space-2);
+            margin-top: auto;
+        }
+
+        /* Card progress */
+        .aq-card-progress {
+            height: 4px;
+            background: var(--aqua-bg-secondary);
+            border-radius: var(--aqua-radius-full);
+            overflow: hidden;
+            margin: var(--aqua-space-4) 0;
+        }
+
+        .aq-card-progress-bar {
+            height: 100%;
+            background: var(--aqua-primary-500);
+            border-radius: var(--aqua-radius-full);
+            transition: width var(--aqua-duration-300) ease;
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-card.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 70%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+            
+            .aq-card.gradient {
+                background: linear-gradient(135deg, 
+                    var(--aqua-primary-900) 0%, 
+                    var(--aqua-secondary-900) 100%);
+                color: var(--aqua-primary-100);
+            }
+            
+            .aq-card.gradient .aq-card-title {
+                color: var(--aqua-primary-50);
+            }
+            
+            .aq-card.gradient .aq-card-subtitle {
+                color: var(--aqua-primary-200);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-card,
+            .aq-card-img,
+            .aq-card-hover-content,
+            .aq-card::before,
+            .aq-card::after {
+                transition: none;
+                animation: none;
+                transform: none !important;
+            }
+            
+            .aq-card.stagger .aq-card-header > *,
+            .aq-card.stagger .aq-card-body > *,
+            .aq-card.stagger .aq-card-footer > * {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+        }
+
+        /* ==================== CUSTOM ANIMATIONS ==================== */
+        @keyframes aq-card-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes aq-card-shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        /* Loading skeleton */
+        .aq-card.skeleton {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-card.skeleton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                color-mix(in srgb, var(--aqua-bg-secondary) 50%, transparent) 50%,
+                transparent 100%);
+            background-size: 200% 100%;
+            animation: aq-card-shimmer 1.5s infinite;
+            z-index: 1;
+        }
+
+        .aq-card.skeleton * {
+            opacity: 0;
+        }
+
+        
