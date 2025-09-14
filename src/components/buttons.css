@@ -1,1 +1,569 @@
 
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED BUTTONS SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== BUTTON BASE STYLES ==================== */
+        .aq-btn {
+            /* Layout */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            
+            /* Typography */
+            font-family: inherit;
+            font-size: var(--aqua-text-base);
+            font-weight: var(--aqua-font-semibold);
+            line-height: var(--aqua-leading-tight);
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            white-space: nowrap;
+            vertical-align: middle;
+            
+            /* Sizing */
+            padding: var(--aqua-btn-padding-y) var(--aqua-btn-padding-x);
+            min-height: 2.75rem;
+            min-width: 2.75rem;
+            
+            /* Borders & Effects */
+            border: var(--aqua-btn-border-width) solid transparent;
+            border-radius: var(--aqua-btn-radius);
+            box-shadow: var(--aqua-shadow-sm);
+            outline: none;
+            
+            /* Colors */
+            color: var(--aqua-text-inverse);
+            background-color: var(--aqua-primary-500);
+            
+            /* Interactions */
+            cursor: pointer;
+            user-select: none;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-200) var(--aqua-transition-ease-out);
+            transform: translateY(0);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        /* ==================== BUTTON STATES ==================== */
+        .aq-btn:hover {
+            background-color: var(--aqua-primary-600);
+            transform: translateY(-1px);
+            box-shadow: var(--aqua-shadow-md);
+        }
+
+        .aq-btn:active {
+            background-color: var(--aqua-primary-700);
+            transform: translateY(0);
+            box-shadow: var(--aqua-shadow-sm);
+        }
+
+        .aq-btn:focus-visible {
+            box-shadow: 
+                0 0 0 3px color-mix(in srgb, var(--aqua-primary-500) 30%, transparent),
+                var(--aqua-shadow-md);
+            outline: 2px solid transparent;
+        }
+
+        .aq-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ==================== BUTTON SIZES ==================== */
+        .aq-btn.xs {
+            font-size: var(--aqua-text-xs);
+            padding: 0.375rem 0.625rem;
+            min-height: 1.75rem;
+            min-width: 1.75rem;
+        }
+
+        .aq-btn.sm {
+            font-size: var(--aqua-text-sm);
+            padding: 0.5rem 0.75rem;
+            min-height: 2rem;
+            min-width: 2rem;
+        }
+
+        .aq-btn.md {
+            font-size: var(--aqua-text-base);
+            padding: 0.625rem 1rem;
+            min-height: 2.5rem;
+            min-width: 2.5rem;
+        }
+
+        .aq-btn.lg {
+            font-size: var(--aqua-text-lg);
+            padding: 0.75rem 1.25rem;
+            min-height: 3rem;
+            min-width: 3rem;
+        }
+
+        .aq-btn.xl {
+            font-size: var(--aqua-text-xl);
+            padding: 0.875rem 1.5rem;
+            min-height: 3.5rem;
+            min-width: 3.5rem;
+        }
+
+        /* ==================== BUTTON VARIANTS ==================== */
+        /* Primary variant (default) */
+        .aq-btn.primary {
+            background-color: var(--aqua-primary-500);
+            color: var(--aqua-text-inverse);
+        }
+
+        .aq-btn.primary:hover {
+            background-color: var(--aqua-primary-600);
+        }
+
+        .aq-btn.primary:active {
+            background-color: var(--aqua-primary-700);
+        }
+
+        /* Secondary variant */
+        .aq-btn.secondary {
+            background-color: var(--aqua-secondary-500);
+            color: var(--aqua-text-inverse);
+        }
+
+        .aq-btn.secondary:hover {
+            background-color: var(--aqua-secondary-600);
+        }
+
+        .aq-btn.secondary:active {
+            background-color: var(--aqua-secondary-700);
+        }
+
+        /* Outline variant */
+        .aq-btn.outline {
+            background-color: transparent;
+            color: var(--aqua-primary-600);
+            border: 2px solid var(--aqua-primary-500);
+            box-shadow: none;
+        }
+
+        .aq-btn.outline:hover {
+            background-color: var(--aqua-primary-500);
+            color: var(--aqua-text-inverse);
+            box-shadow: var(--aqua-shadow-md);
+        }
+
+        .aq-btn.outline:active {
+            background-color: var(--aqua-primary-700);
+            border-color: var(--aqua-primary-700);
+        }
+
+        /* Ghost variant */
+        .aq-btn.ghost {
+            background-color: transparent;
+            color: var(--aqua-primary-600);
+            border: 1px solid transparent;
+            box-shadow: none;
+        }
+
+        .aq-btn.ghost:hover {
+            background-color: color-mix(in srgb, var(--aqua-primary-500) 10%, transparent);
+            color: var(--aqua-primary-700);
+        }
+
+        .aq-btn.ghost:active {
+            background-color: color-mix(in srgb, var(--aqua-primary-500) 20%, transparent);
+        }
+
+        /* Link variant */
+        .aq-btn.link {
+            background-color: transparent;
+            color: var(--aqua-primary-600);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            box-shadow: none;
+            padding: 0;
+            min-height: auto;
+            min-width: auto;
+        }
+
+        .aq-btn.link:hover {
+            color: var(--aqua-primary-700);
+            background-color: transparent;
+            text-decoration-thickness: 2px;
+            transform: none;
+        }
+
+        .aq-btn.link:active {
+            color: var(--aqua-primary-800);
+        }
+
+        /* ==================== BUTTON COLORS ==================== */
+        /* Success color */
+        .aq-btn.success {
+            background-color: var(--aqua-success);
+        }
+
+        .aq-btn.success:hover {
+            background-color: color-mix(in srgb, var(--aqua-success) 20%, black);
+        }
+
+        .aq-btn.success:active {
+            background-color: color-mix(in srgb, var(--aqua-success) 30%, black);
+        }
+
+        /* Warning color */
+        .aq-btn.warning {
+            background-color: var(--aqua-warning);
+            color: var(--aqua-gray-900);
+        }
+
+        .aq-btn.warning:hover {
+            background-color: color-mix(in srgb, var(--aqua-warning) 20%, black);
+        }
+
+        .aq-btn.warning:active {
+            background-color: color-mix(in srgb, var(--aqua-warning) 30%, black);
+        }
+
+        /* Danger color */
+        .aq-btn.danger {
+            background-color: var(--aqua-danger);
+        }
+
+        .aq-btn.danger:hover {
+            background-color: color-mix(in srgb, var(--aqua-danger) 20%, black);
+        }
+
+        .aq-btn.danger:active {
+            background-color: color-mix(in srgb, var(--aqua-danger) 30%, black);
+        }
+
+        /* Info color */
+        .aq-btn.info {
+            background-color: var(--aqua-info);
+        }
+
+        .aq-btn.info:hover {
+            background-color: color-mix(in srgb, var(--aqua-info) 20%, black);
+        }
+
+        .aq-btn.info:active {
+            background-color: color-mix(in srgb, var(--aqua-info) 30%, black);
+        }
+
+        /* ==================== BUTTON WITH ICONS ==================== */
+        .aq-btn .aq-btn-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.25em;
+            height: 1.25em;
+            font-size: 1.125em;
+            transition: transform var(--aqua-duration-150) var(--aqua-transition-ease-out);
+        }
+
+        /* Icon positioning */
+        .aq-btn .aq-btn-icon:first-child:not(:only-child) {
+            margin-right: 0.5em;
+        }
+
+        .aq-btn .aq-btn-icon:last-child:not(:only-child) {
+            margin-left: 0.5em;
+        }
+
+        /* Icon animations */
+        .aq-btn:hover .aq-btn-icon:last-child:not(:only-child) {
+            transform: translateX(2px);
+        }
+
+        .aq-btn:hover .aq-btn-icon:first-child:not(:only-child) {
+            transform: translateX(-2px);
+        }
+
+        /* ==================== BUTTON ANIMATIONS ==================== */
+        /* Ripple effect */
+        .aq-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            z-index: -1;
+            transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .aq-btn:active::after {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+            transition: 0s;
+        }
+
+        /* Pulse animation */
+        .aq-btn.pulse {
+            animation: aq-btn-pulse 2s infinite;
+        }
+
+        @keyframes aq-btn-pulse {
+            0% {
+                box-shadow: 0 0 0 0 color-mix(in srgb, var(--aqua-primary-500) 70%, transparent);
+            }
+            70% {
+                box-shadow: 0 0 0 10px transparent;
+            }
+            100% {
+                box-shadow: 0 0 0 0 transparent;
+            }
+        }
+
+        /* Bounce animation */
+        .aq-btn.bounce {
+            animation: aq-btn-bounce 2s infinite;
+        }
+
+        @keyframes aq-btn-bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Shake animation */
+        .aq-btn.shake {
+            animation: aq-btn-shake 0.5s;
+        }
+
+        @keyframes aq-btn-shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+            20%, 40%, 60%, 80% { transform: translateX(4px); }
+        }
+
+        /* Spin animation for loading state */
+        .aq-btn .aq-btn-spinner {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            border-top-color: currentColor;
+            animation: aq-btn-spin 0.75s linear infinite;
+            margin-right: 0.5em;
+        }
+
+        @keyframes aq-btn-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ==================== BUTTON GROUPS ==================== */
+        .aq-btn-group {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-radius: var(--aqua-btn-radius);
+            box-shadow: var(--aqua-shadow-sm);
+            overflow: hidden;
+        }
+
+        .aq-btn-group .aq-btn {
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        .aq-btn-group .aq-btn:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .aq-btn-group .aq-btn:first-child {
+            border-top-left-radius: var(--aqua-btn-radius);
+            border-bottom-left-radius: var(--aqua-btn-radius);
+        }
+
+        .aq-btn-group .aq-btn:last-child {
+            border-top-right-radius: var(--aqua-btn-radius);
+            border-bottom-right-radius: var(--aqua-btn-radius);
+        }
+
+        /* ==================== SPECIAL BUTTON STYLES ==================== */
+        /* Floating action button */
+        .aq-btn.fab {
+            border-radius: 50%;
+            padding: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            min-width: auto;
+            min-height: auto;
+            box-shadow: var(--aqua-shadow-lg);
+        }
+
+        .aq-btn.fab.sm {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .aq-btn.fab.lg {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+
+        /* Glass morphism button */
+        .aq-btn.glass {
+            background: color-mix(in srgb, var(--aqua-primary-500) 20%, transparent);
+            backdrop-filter: blur(10px);
+            border: 1px solid color-mix(in srgb, var(--aqua-primary-200) 30%, transparent);
+            color: var(--aqua-primary-700);
+        }
+
+        .aq-btn.glass:hover {
+            background: color-mix(in srgb, var(--aqua-primary-500) 30%, transparent);
+            backdrop-filter: blur(12px);
+        }
+
+        /* Gradient button */
+        .aq-btn.gradient {
+            background: linear-gradient(45deg, 
+                var(--aqua-primary-500), 
+                var(--aqua-primary-700));
+            border: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aq-btn.gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                var(--aqua-primary-600), 
+                var(--aqua-primary-800));
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity var(--aqua-duration-200) ease;
+            z-index: -1;
+        }
+
+        .aq-btn.gradient:hover::before {
+            opacity: 1;
+        }
+
+        /* 3D button */
+        .aq-btn.three-d {
+            box-shadow: 
+                0 4px 0 color-mix(in srgb, var(--aqua-primary-700) 80%, black),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: all var(--aqua-duration-100) ease;
+        }
+
+        .aq-btn.three-d:hover {
+            transform: translateY(1px);
+            box-shadow: 
+                0 3px 0 color-mix(in srgb, var(--aqua-primary-700) 80%, black),
+                0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .aq-btn.three-d:active {
+            transform: translateY(3px);
+            box-shadow: 
+                0 1px 0 color-mix(in srgb, var(--aqua-primary-700) 80%, black),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ==================== RESPONSIVE BUTTONS ==================== */
+        @media (max-width: 640px) {
+            .aq-btn.responsive {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .aq-btn-group.responsive {
+                width: 100%;
+            }
+            
+            .aq-btn-group.responsive .aq-btn {
+                flex: 1;
+                min-width: 0;
+            }
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-btn.outline {
+                border-color: var(--aqua-primary-400);
+                color: var(--aqua-primary-300);
+            }
+            
+            .aq-btn.outline:hover {
+                background-color: var(--aqua-primary-600);
+                color: var(--aqua-text-inverse);
+            }
+            
+            .aq-btn.ghost {
+                color: var(--aqua-primary-300);
+            }
+            
+            .aq-btn.ghost:hover {
+                background-color: color-mix(in srgb, var(--aqua-primary-500) 15%, transparent);
+                color: var(--aqua-primary-200);
+            }
+            
+            .aq-btn.glass {
+                background: color-mix(in srgb, var(--aqua-primary-400) 15%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-primary-300) 20%, transparent);
+                color: var(--aqua-primary-100);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-btn,
+            .aq-btn::after,
+            .aq-btn .aq-btn-icon {
+                transition: none;
+                animation: none;
+            }
+            
+            .aq-btn:hover,
+            .aq-btn:active {
+                transform: none;
+            }
+            
+            .aq-btn.pulse,
+            .aq-btn.bounce,
+            .aq-btn.shake {
+                animation: none;
+            }
+        }
+
+        /* ==================== HIGH CONTRAST MODE SUPPORT ==================== */
+        @media (prefers-contrast: high) {
+            .aq-btn {
+                border-width: 2px;
+            }
+            
+            .aq-btn.outline {
+                border-width: 3px;
+            }
+        }
+
+                        
