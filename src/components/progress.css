@@ -1,0 +1,522 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED PROGRESS SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== PROGRESS BASE STYLES ==================== */
+        .aq-progress {
+            /* Layout */
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-4);
+            width: 100%;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+            
+            /* Performance */
+            will-change: transform, opacity;
+            position: relative;
+        }
+
+        /* ==================== PROGRESS BAR CONTAINER ==================== */
+        .aq-progress-track {
+            /* Layout */
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            
+            /* Sizing */
+            height: 1rem;
+            
+            /* Borders & Effects */
+            border-radius: var(--aqua-radius-full);
+            background: var(--aqua-bg-secondary);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        /* ==================== PROGRESS BAR FILL ==================== */
+        .aq-progress-bar {
+            /* Layout */
+            height: 100%;
+            width: 0%;
+            
+            /* Borders & Effects */
+            border-radius: inherit;
+            background: var(--aqua-primary-500);
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-500) var(--aqua-transition-ease-out);
+            
+            /* Animation */
+            animation: aq-progress-glow 2s ease-in-out infinite;
+            
+            /* Performance */
+            will-change: width, transform;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes aq-progress-glow {
+            0%, 100% {
+                box-shadow: 0 0 5px color-mix(in srgb, var(--aqua-primary-500) 50%, transparent);
+            }
+            50% {
+                box-shadow: 0 0 15px color-mix(in srgb, var(--aqua-primary-500) 70%, transparent);
+            }
+        }
+
+        /* ==================== PROGRESS VARIANTS ==================== */
+        /* Primary variant */
+        .aq-progress-bar.primary {
+            background: var(--aqua-primary-500);
+            background-image: linear-gradient(45deg, 
+                var(--aqua-primary-500) 0%, 
+                var(--aqua-primary-600) 100%);
+        }
+
+        /* Success variant */
+        .aq-progress-bar.success {
+            background: var(--aqua-success);
+            background-image: linear-gradient(45deg, 
+                var(--aqua-success) 0%, 
+                color-mix(in srgb, var(--aqua-success) 80%, black) 100%);
+        }
+
+        /* Warning variant */
+        .aq-progress-bar.warning {
+            background: var(--aqua-warning);
+            background-image: linear-gradient(45deg, 
+                var(--aqua-warning) 0%, 
+                color-mix(in srgb, var(--aqua-warning) 80%, black) 100%);
+        }
+
+        /* Danger variant */
+        .aq-progress-bar.danger {
+            background: var(--aqua-danger);
+            background-image: linear-gradient(45deg, 
+                var(--aqua-danger) 0%, 
+                color-mix(in srgb, var(--aqua-danger) 80%, black) 100%);
+        }
+
+        /* Info variant */
+        .aq-progress-bar.info {
+            background: var(--aqua-info);
+            background-image: linear-gradient(45deg, 
+                var(--aqua-info) 0%, 
+                color-mix(in srgb, var(--aqua-info) 80%, black) 100%);
+        }
+
+        /* Gradient variant */
+        .aq-progress-bar.gradient {
+            background: linear-gradient(90deg, 
+                var(--aqua-primary-500), 
+                var(--aqua-secondary-500), 
+                var(--aqua-success), 
+                var(--aqua-info));
+            background-size: 300% 100%;
+            animation: aq-progress-gradient 3s ease infinite, 
+                       aq-progress-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes aq-progress-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ==================== PROGRESS STYLES ==================== */
+        /* Outline style */
+        .aq-progress-track.outline {
+            background: transparent;
+            border: 2px solid var(--aqua-border-primary);
+            box-shadow: none;
+        }
+
+        .aq-progress-track.outline .aq-progress-bar {
+            border-radius: calc(var(--aqua-radius-full) - 2px);
+        }
+
+        /* Glass style */
+        .aq-progress-track.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+            backdrop-filter: blur(10px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Flat style */
+        .aq-progress-track.flat {
+            background: var(--aqua-bg-tertiary);
+            box-shadow: none;
+            height: 0.5rem;
+        }
+
+        .aq-progress-track.flat .aq-progress-bar {
+            border-radius: 0;
+            animation: none;
+        }
+
+        /* ==================== PROGRESS SIZES ==================== */
+        .aq-progress-track.xs {
+            height: 0.5rem;
+        }
+
+        .aq-progress-track.sm {
+            height: 0.75rem;
+        }
+
+        .aq-progress-track.md {
+            height: 1rem;
+        }
+
+        .aq-progress-track.lg {
+            height: 1.25rem;
+        }
+
+        .aq-progress-track.xl {
+            height: 1.5rem;
+        }
+
+        /* ==================== PROGRESS ANIMATIONS ==================== */
+        /* Striped animation */
+        .aq-progress-bar.striped {
+            background-image: linear-gradient(45deg, 
+                rgba(255, 255, 255, 0.15) 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                rgba(255, 255, 255, 0.15) 50%, 
+                rgba(255, 255, 255, 0.15) 75%, 
+                transparent 75%, 
+                transparent);
+            background-size: 1rem 1rem;
+            animation: aq-progress-striped 1s linear infinite, 
+                       aq-progress-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes aq-progress-striped {
+            0% { background-position: 1rem 0; }
+            100% { background-position: 0 0; }
+        }
+
+        /* Pulse animation */
+        .aq-progress-bar.pulse {
+            animation: aq-progress-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes aq-progress-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Bounce animation */
+        .aq-progress-bar.bounce {
+            animation: aq-progress-bounce 0.5s ease infinite alternate;
+        }
+
+        @keyframes aq-progress-bounce {
+            0% { transform: scaleY(1); }
+            100% { transform: scaleY(1.1); }
+        }
+
+        /* Wave animation */
+        .aq-progress-bar.wave {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-progress-bar.wave::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%);
+            animation: aq-progress-wave 1.5s linear infinite;
+        }
+
+        @keyframes aq-progress-wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ==================== PROGRESS LABELS ==================== */
+        .aq-progress-label {
+            font-size: var(--aqua-text-sm);
+            font-weight: var(--aqua-font-medium);
+            color: var(--aqua-text-primary);
+            min-width: 3rem;
+            text-align: right;
+        }
+
+        .aq-progress-label.left {
+            text-align: left;
+            min-width: auto;
+        }
+
+        .aq-progress-label.inside {
+            position: absolute;
+            right: var(--aqua-space-2);
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: var(--aqua-font-bold);
+            font-size: var(--aqua-text-xs);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        /* ==================== PROGRESS WITH ICONS ==================== */
+        .aq-progress-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--aqua-text-secondary);
+            transition: color var(--aqua-duration-300) ease;
+        }
+
+        .aq-progress:hover .aq-progress-icon {
+            color: var(--aqua-primary-500);
+            animation: aq-progress-icon-spin 1s ease;
+        }
+
+        @keyframes aq-progress-icon-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ==================== CIRCULAR PROGRESS ==================== */
+        .aq-progress-circular {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .aq-progress-circular-track {
+            fill: none;
+            stroke: var(--aqua-bg-secondary);
+            stroke-width: 6;
+        }
+
+        .aq-progress-circular-bar {
+            fill: none;
+            stroke: var(--aqua-primary-500);
+            stroke-width: 6;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            transition: stroke-dashoffset var(--aqua-duration-500) ease;
+            animation: aq-progress-circular-rotate 2s linear infinite;
+        }
+
+        @keyframes aq-progress-circular-rotate {
+            0% { transform: rotate(-90deg); }
+            100% { transform: rotate(270deg); }
+        }
+
+        .aq-progress-circular-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: var(--aqua-text-sm);
+            font-weight: var(--aqua-font-bold);
+            color: var(--aqua-text-primary);
+        }
+
+        /* Circular sizes */
+        .aq-progress-circular.sm {
+            width: 60px;
+            height: 60px;
+        }
+
+        .aq-progress-circular.lg {
+            width: 100px;
+            height: 100px;
+        }
+
+        .aq-progress-circular.xl {
+            width: 120px;
+            height: 120px;
+        }
+
+        /* Circular variants */
+        .aq-progress-circular-bar.success {
+            stroke: var(--aqua-success);
+        }
+
+        .aq-progress-circular-bar.warning {
+            stroke: var(--aqua-warning);
+        }
+
+        .aq-progress-circular-bar.danger {
+            stroke: var(--aqua-danger);
+        }
+
+        .aq-progress-circular-bar.gradient {
+            stroke: url(#aq-progress-gradient);
+        }
+
+        /* ==================== PROGRESS STATES ==================== */
+        /* Indeterminate state */
+        .aq-progress-bar.indeterminate {
+            width: 100% !important;
+            animation: aq-progress-indeterminate 1.5s ease-in-out infinite;
+        }
+
+        @keyframes aq-progress-indeterminate {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        /* Complete state */
+        .aq-progress-bar.complete {
+            animation: aq-progress-complete 0.6s ease forwards;
+        }
+
+        @keyframes aq-progress-complete {
+            0% { transform: scaleX(1); }
+            50% { transform: scaleX(1.05); }
+            100% { 
+                transform: scaleX(1);
+                box-shadow: 0 0 20px color-mix(in srgb, currentColor 50%, transparent);
+            }
+        }
+
+        /* Error state */
+        .aq-progress-bar.error {
+            animation: aq-progress-error 0.5s ease forwards;
+        }
+
+        @keyframes aq-progress-error {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        /* ==================== PROGRESS GROUP ==================== */
+        .aq-progress-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-3);
+        }
+
+        .aq-progress-group-stacked {
+            gap: 0;
+        }
+
+        .aq-progress-group-stacked .aq-progress-track {
+            border-radius: 0;
+            border-bottom: 1px solid var(--aqua-border-primary);
+        }
+
+        .aq-progress-group-stacked .aq-progress-track:first-child {
+            border-top-left-radius: var(--aqua-radius);
+            border-top-right-radius: var(--aqua-radius);
+        }
+
+        .aq-progress-group-stacked .aq-progress-track:last-child {
+            border-bottom-left-radius: var(--aqua-radius);
+            border-bottom-right-radius: var(--aqua-radius);
+            border-bottom: none;
+        }
+
+        /* ==================== PROGRESS INTERACTIONS ==================== */
+        .aq-progress.interactive .aq-progress-track {
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-progress.interactive .aq-progress-track:hover {
+            transform: translateY(-1px);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .aq-progress.interactive .aq-progress-track:active {
+            transform: translateY(0);
+        }
+
+        /* ==================== PROGRESS SPECIAL EFFECTS ==================== */
+        /* Glow effect */
+        .aq-progress-bar.glow {
+            box-shadow: 
+                0 0 10px currentColor,
+                0 0 20px color-mix(in srgb, currentColor 30%, transparent);
+            animation: aq-progress-glow-intense 2s ease-in-out infinite;
+        }
+
+        @keyframes aq-progress-glow-intense {
+            0%, 100% {
+                box-shadow: 
+                    0 0 10px currentColor,
+                    0 0 20px color-mix(in srgb, currentColor 30%, transparent);
+            }
+            50% {
+                box-shadow: 
+                    0 0 15px currentColor,
+                    0 0 30px color-mix(in srgb, currentColor 50%, transparent),
+                    0 0 40px color-mix(in srgb, currentColor 20%, transparent);
+            }
+        }
+
+        /* Neon effect */
+        .aq-progress-bar.neon {
+            background: transparent;
+            box-shadow: 
+                0 0 5px currentColor,
+                inset 0 0 5px color-mix(in srgb, currentColor 20%, transparent);
+            border: 1px solid currentColor;
+            animation: aq-progress-neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes aq-progress-neon {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.8;
+            }
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-progress-track {
+                background: var(--aqua-bg-tertiary);
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+            }
+
+            .aq-progress-track.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 70%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+
+            .aq-progress-track.outline {
+                border-color: var(--aqua-border-secondary);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-progress-bar,
+            .aq-progress-track,
+            .aq-progress-circular-bar {
+                animation: none;
+                transition: none;
+            }
+
+            .aq-progress.interactive .aq-progress-track:hover {
+                transform: none;
+            }
+        }
