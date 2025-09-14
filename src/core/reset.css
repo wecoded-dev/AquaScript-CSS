@@ -1,1 +1,279 @@
 
+        /* ---------------------------------------------------------------
+        AQUASCRIPTCSS ULTRA ADVANCED RESET v2.0
+        --------------------------------------------------------------- */
+
+        /* ==================== CORE RESET ==================== */
+        /* Box sizing reset with inheritance */
+        html {
+            box-sizing: border-box;
+            /* Smooth scrolling for modern browsers */
+            scroll-behavior: smooth;
+            /* Text rendering optimization */
+            text-rendering: optimizeLegibility;
+            /* Font smoothing for modern browsers */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            /* Prevent adjustments of font size after orientation changes */
+            -webkit-text-size-adjust: 100%;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+            /* Remove all animations and transitions for reduced motion */
+            animation: none !important;
+            transition: none !important;
+        }
+
+        /* Remove default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            /* Border reset for consistency */
+            border: 0;
+            /* Outline reset for accessibility */
+            outline: 0;
+        }
+
+        /* ==================== ELEMENT LEVEL RESETS ==================== */
+        /* HTML5 display reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section, main {
+            display: block;
+        }
+
+        /* Body reset with enhanced defaults */
+        body {
+            /* Line height for better readability */
+            line-height: 1.6;
+            /* Default font stack with system fonts for performance */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                         Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            /* Standard font weight */
+            font-weight: 400;
+            /* Text color with accessibility contrast */
+            color: #222;
+            /* Background color reset */
+            background-color: #fff;
+            /* Minimum width for mobile devices */
+            min-width: 320px;
+            /* Prevent horizontal scroll */
+            overflow-x: hidden;
+        }
+
+        /* Heading reset with semantic hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: inherit;
+            margin: 0;
+        }
+
+        /* List reset with semantic meaning */
+        ol, ul {
+            list-style: none;
+        }
+
+        /* Link reset with accessibility */
+        a {
+            background-color: transparent;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Form element resets */
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: inherit;
+            margin: 0;
+            padding: 0;
+            background: none;
+            border: none;
+            border-radius: 0;
+            appearance: none;
+        }
+
+        /* Button specific reset */
+        button {
+            cursor: pointer;
+            overflow: visible;
+            text-transform: none;
+        }
+
+        /* Image and media reset */
+        img, picture, video, canvas, svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Table reset */
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        td, th {
+            padding: 0;
+        }
+
+        /* ==================== ACCESSIBILITY ENHANCEMENTS ==================== */
+        /* Improve accessibility for hidden content */
+        [hidden] {
+            display: none !important;
+        }
+
+        /* Focus styles for keyboard navigation */
+        [tabindex="0"]:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus,
+        a:focus {
+            outline: 2px solid #4D90FE;
+            outline-offset: 2px;
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --text-color: #000;
+                --background-color: #fff;
+            }
+        }
+
+        /* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+        /* Containment for performance */
+        article, aside, footer, header, nav, section, main {
+            contain: content;
+        }
+
+        /* Will-change for optimized animations */
+        .aqua-animate {
+            will-change: transform, opacity;
+        }
+
+        /* ==================== TYPOGRAPHY ENHANCEMENTS ==================== */
+        /* Prevent overflow of long words */
+        p, h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
+        }
+
+        /* Hyphenation for better text flow */
+        p {
+            hyphens: auto;
+        }
+
+        /* ==================== INTERACTION ENHANCEMENTS ==================== */
+        /* Improved selection styles */
+        ::selection {
+            background-color: #b3d4fc;
+            color: #000;
+            text-shadow: none;
+        }
+
+        /* ==================== CUSTOM PROPERTIES ==================== */
+        :root {
+            /* Color system */
+            --aqua-primary: #0066cc;
+            --aqua-secondary: #6c757d;
+            --aqua-success: #28a745;
+            --aqua-danger: #dc3545;
+            --aqua-warning: #ffc107;
+            --aqua-info: #17a2b8;
+            
+            /* Typography scale */
+            --aqua-text-xs: 0.75rem;
+            --aqua-text-sm: 0.875rem;
+            --aqua-text-base: 1rem;
+            --aqua-text-lg: 1.125rem;
+            --aqua-text-xl: 1.25rem;
+            --aqua-text-2xl: 1.5rem;
+            
+            /* Spacing scale */
+            --aqua-space-1: 0.25rem;
+            --aqua-space-2: 0.5rem;
+            --aqua-space-3: 0.75rem;
+            --aqua-space-4: 1rem;
+            --aqua-space-5: 1.25rem;
+            
+            /* Border radius */
+            --aqua-radius-sm: 0.125rem;
+            --aqua-radius: 0.25rem;
+            --aqua-radius-md: 0.375rem;
+            --aqua-radius-lg: 0.5rem;
+            
+            /* Shadows */
+            --aqua-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --aqua-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --aqua-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ==================== DARK MODE SUPPORT ==================== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #f0f0f0;
+                --background-color: #121212;
+            }
+            
+            body {
+                color: var(--text-color);
+                background-color: var(--background-color);
+            }
+        }
+
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            * {
+                background: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+            
+            a, a:visited {
+                text-decoration: underline;
+            }
+            
+            pre, blockquote {
+                border: 1px solid #999;
+                page-break-inside: avoid;
+            }
+            
+            thead {
+                display: table-header-group;
+            }
+            
+            tr, img {
+                page-break-inside: avoid;
+            }
+            
+            img {
+                max-width: 100% !important;
+            }
+            
+            @page {
+                margin: 0.5in;
+            }
+            
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    
