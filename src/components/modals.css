@@ -1,0 +1,461 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED MODALS SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== MODAL BASE STYLES ==================== */
+        .aq-modal {
+            /* Layout */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--aqua-z-50);
+            
+            /* Visibility */
+            opacity: 0;
+            visibility: hidden;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) var(--aqua-transition-ease-out);
+            
+            /* Backdrop */
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            
+            /* Performance */
+            will-change: opacity, backdrop-filter;
+            perspective: 1000px;
+        }
+
+        /* ==================== MODAL STATES ==================== */
+        .aq-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .aq-modal.active .aq-modal-dialog {
+            transform: translateY(0) scale(1) rotateX(0);
+            opacity: 1;
+        }
+
+        /* ==================== MODAL DIALOG ==================== */
+        .aq-modal-dialog {
+            /* Layout */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 90vw;
+            max-height: 90vh;
+            margin: var(--aqua-space-4);
+            
+            /* Sizing */
+            width: 100%;
+            
+            /* Borders & Effects */
+            border-radius: var(--aqua-radius-2xl);
+            background: var(--aqua-bg-primary);
+            box-shadow: var(--aqua-shadow-2xl);
+            border: 1px solid var(--aqua-border-primary);
+            
+            /* Transitions */
+            transform: translateY(-50px) scale(0.9) rotateX(-5deg);
+            opacity: 0;
+            transition: all var(--aqua-duration-500) cubic-bezier(0.32, 0.72, 0, 1);
+            
+            /* Performance */
+            will-change: transform, opacity;
+            transform-style: preserve-3d;
+        }
+
+        /* ==================== MODAL SIZES ==================== */
+        .aq-modal-sm .aq-modal-dialog {
+            max-width: 400px;
+        }
+
+        .aq-modal-md .aq-modal-dialog {
+            max-width: 500px;
+        }
+
+        .aq-modal-lg .aq-modal-dialog {
+            max-width: 700px;
+        }
+
+        .aq-modal-xl .aq-modal-dialog {
+            max-width: 900px;
+        }
+
+        .aq-modal-fullscreen {
+            padding: 0;
+        }
+
+        .aq-modal-fullscreen .aq-modal-dialog {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        /* ==================== MODAL CONTENT ==================== */
+        .aq-modal-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            overflow: hidden;
+        }
+
+        /* ==================== MODAL HEADER ==================== */
+        .aq-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--aqua-space-6) var(--aqua-space-6) 0;
+            margin-bottom: var(--aqua-space-4);
+        }
+
+        .aq-modal-title {
+            font-size: var(--aqua-text-xl);
+            font-weight: var(--aqua-font-semibold);
+            color: var(--aqua-text-heading);
+            margin: 0;
+            line-height: var(--aqua-leading-tight);
+        }
+
+        /* ==================== MODAL BODY ==================== */
+        .aq-modal-body {
+            padding: 0 var(--aqua-space-6);
+            flex: 1 1 auto;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        .aq-modal-body-content {
+            padding-bottom: var(--aqua-space-6);
+        }
+
+        /* ==================== MODAL FOOTER ==================== */
+        .aq-modal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: var(--aqua-space-3);
+            padding: var(--aqua-space-4) var(--aqua-space-6) var(--aqua-space-6);
+            background: var(--aqua-bg-secondary);
+            border-bottom-left-radius: var(--aqua-radius-2xl);
+            border-bottom-right-radius: var(--aqua-radius-2xl);
+        }
+
+        /* ==================== MODAL CLOSE BUTTON ==================== */
+        .aq-modal-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--aqua-radius-full);
+            background: transparent;
+            border: none;
+            color: var(--aqua-text-secondary);
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-modal-close:hover {
+            background: var(--aqua-bg-secondary);
+            color: var(--aqua-text-primary);
+            transform: rotate(90deg);
+        }
+
+        .aq-modal-close:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+
+        /* ==================== MODAL BACKDROP ==================== */
+        .aq-modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity var(--aqua-duration-300) ease;
+        }
+
+        .aq-modal.active .aq-modal-backdrop {
+            opacity: 1;
+        }
+
+        /* ==================== MODAL VARIANTS ==================== */
+        /* Glass modal */
+        .aq-modal.glass .aq-modal-dialog {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 90%, transparent);
+            backdrop-filter: blur(20px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+        }
+
+        /* Centered modal */
+        .aq-modal.centered .aq-modal-dialog {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Alert modal */
+        .aq-modal.alert .aq-modal-dialog {
+            max-width: 400px;
+        }
+
+        .aq-modal.alert .aq-modal-body {
+            text-align: center;
+            padding: var(--aqua-space-8);
+        }
+
+        /* Drawer modal */
+        .aq-modal.drawer {
+            justify-content: flex-end;
+        }
+
+        .aq-modal.drawer .aq-modal-dialog {
+            height: 100%;
+            max-height: 100%;
+            margin: 0;
+            border-radius: 0;
+            border-left: 1px solid var(--aqua-border-primary);
+            transform: translateX(100%);
+        }
+
+        .aq-modal.drawer.active .aq-modal-dialog {
+            transform: translateX(0);
+        }
+
+        .aq-modal.drawer-left {
+            justify-content: flex-start;
+        }
+
+        .aq-modal.drawer-left .aq-modal-dialog {
+            border-left: none;
+            border-right: 1px solid var(--aqua-border-primary);
+            transform: translateX(-100%);
+        }
+
+        .aq-modal.drawer-left.active .aq-modal-dialog {
+            transform: translateX(0);
+        }
+
+        /* ==================== MODAL ANIMATIONS ==================== */
+        /* Scale animation */
+        .aq-modal.scale .aq-modal-dialog {
+            transform: scale(0.7) rotate(0);
+        }
+
+        .aq-modal.scale.active .aq-modal-dialog {
+            transform: scale(1) rotate(0);
+        }
+
+        /* Flip animation */
+        .aq-modal.flip .aq-modal-dialog {
+            transform: rotateY(-90deg);
+            opacity: 0;
+        }
+
+        .aq-modal.flip.active .aq-modal-dialog {
+            transform: rotateY(0);
+            opacity: 1;
+        }
+
+        /* Slide from top animation */
+        .aq-modal.slide-top .aq-modal-dialog {
+            transform: translateY(-100vh);
+        }
+
+        .aq-modal.slide-top.active .aq-modal-dialog {
+            transform: translateY(0);
+        }
+
+        /* Bounce animation */
+        .aq-modal.bounce .aq-modal-dialog {
+            animation: aq-modal-bounce-out var(--aqua-duration-300) ease;
+        }
+
+        .aq-modal.bounce.active .aq-modal-dialog {
+            animation: aq-modal-bounce-in var(--aqua-duration-500) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        @keyframes aq-modal-bounce-in {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes aq-modal-bounce-out {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.3); opacity: 0; }
+        }
+
+        /* Fade animation */
+        .aq-modal.fade .aq-modal-dialog {
+            opacity: 0;
+            transform: translateY(0) scale(1);
+        }
+
+        .aq-modal.fade.active .aq-modal-dialog {
+            opacity: 1;
+        }
+
+        /* ==================== MODAL OVERLAYS ==================== */
+        .aq-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity var(--aqua-duration-300) ease;
+        }
+
+        .aq-modal.active .aq-modal-overlay {
+            opacity: 1;
+        }
+
+        /* ==================== MODAL LOADING STATES ==================== */
+        .aq-modal-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: color-mix(in srgb, var(--aqua-bg-primary) 90%, transparent);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-modal-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .aq-modal-spinner {
+            width: 3rem;
+            height: 3rem;
+            border: 3px solid var(--aqua-border-primary);
+            border-top: 3px solid var(--aqua-primary-500);
+            border-radius: 50%;
+            animation: aq-modal-spin 1s linear infinite;
+        }
+
+        @keyframes aq-modal-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ==================== MODAL RESPONSIVE DESIGN ==================== */
+        @media (max-width: 768px) {
+            .aq-modal-dialog {
+                margin: var(--aqua-space-2);
+                max-width: 95vw;
+            }
+
+            .aq-modal-sm .aq-modal-dialog,
+            .aq-modal-md .aq-modal-dialog,
+            .aq-modal-lg .aq-modal-dialog,
+            .aq-modal-xl .aq-modal-dialog {
+                max-width: 95vw;
+            }
+
+            .aq-modal-header,
+            .aq-modal-body,
+            .aq-modal-footer {
+                padding-left: var(--aqua-space-4);
+                padding-right: var(--aqua-space-4);
+            }
+
+            .aq-modal-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .aq-modal-footer .aq-btn {
+                width: 100%;
+            }
+        }
+
+        /* ==================== MODAL ACCESSIBILITY ==================== */
+        .aq-modal:focus {
+            outline: none;
+        }
+
+        .aq-modal-dialog:focus {
+            outline: 2px solid var(--aqua-primary-500);
+            outline-offset: 2px;
+        }
+
+        /* ==================== MODAL DARK MODE ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-modal.glass .aq-modal-dialog {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 85%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+        }
+
+        /* ==================== MODAL REDUCED MOTION ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-modal,
+            .aq-modal-dialog,
+            .aq-modal-close {
+                transition: none;
+                animation: none;
+            }
+
+            .aq-modal.active .aq-modal-dialog {
+                transform: none;
+            }
+        }
+
+        /* ==================== MODAL CUSTOM ANIMATIONS ==================== */
+        @keyframes aq-modal-slide-in-right {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes aq-modal-slide-in-left {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes aq-modal-slide-in-top {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes aq-modal-slide-in-bottom {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* ==================== MODAL UTILITY CLASSES ==================== */
+        .aq-modal-scroll-lock {
+            overflow: hidden;
+        }
+
+        
+            
