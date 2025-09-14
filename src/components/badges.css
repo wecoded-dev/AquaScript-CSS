@@ -1,0 +1,604 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED BADGES SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== BADGE BASE STYLES ==================== */
+        .aq-badge {
+            /* Layout */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Typography */
+            font-size: var(--aqua-text-xs);
+            font-weight: var(--aqua-font-semibold);
+            line-height: 1;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            
+            /* Sizing */
+            padding: var(--aqua-space-1) var(--aqua-space-2);
+            min-width: 1.25rem;
+            height: 1.25rem;
+            
+            /* Borders & Effects */
+            border-radius: var(--aqua-radius-full);
+            border: 1px solid transparent;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-200) var(--aqua-transition-ease-out);
+            
+            /* Animation */
+            animation: aq-badge-entrance 0.4s var(--aqua-transition-ease-out);
+            
+            /* Performance */
+            will-change: transform, opacity, background-color;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes aq-badge-entrance {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* ==================== BADGE VARIANTS ==================== */
+        /* Solid badges */
+        .aq-badge.primary {
+            background: var(--aqua-primary-500);
+            color: var(--aqua-text-inverse);
+            border-color: var(--aqua-primary-600);
+        }
+
+        .aq-badge.secondary {
+            background: var(--aqua-secondary-500);
+            color: var(--aqua-text-inverse);
+            border-color: var(--aqua-secondary-600);
+        }
+
+        .aq-badge.success {
+            background: var(--aqua-success);
+            color: var(--aqua-text-inverse);
+            border-color: color-mix(in srgb, var(--aqua-success) 80%, black);
+        }
+
+        .aq-badge.warning {
+            background: var(--aqua-warning);
+            color: var(--aqua-gray-900);
+            border-color: color-mix(in srgb, var(--aqua-warning) 80%, black);
+        }
+
+        .aq-badge.danger {
+            background: var(--aqua-danger);
+            color: var(--aqua-text-inverse);
+            border-color: color-mix(in srgb, var(--aqua-danger) 80%, black);
+        }
+
+        .aq-badge.info {
+            background: var(--aqua-info);
+            color: var(--aqua-text-inverse);
+            border-color: color-mix(in srgb, var(--aqua-info) 80%, black);
+        }
+
+        /* Outline badges */
+        .aq-badge.outline {
+            background: transparent;
+        }
+
+        .aq-badge.outline.primary {
+            color: var(--aqua-primary-600);
+            border-color: var(--aqua-primary-400);
+        }
+
+        .aq-badge.outline.secondary {
+            color: var(--aqua-secondary-600);
+            border-color: var(--aqua-secondary-400);
+        }
+
+        .aq-badge.outline.success {
+            color: var(--aqua-success);
+            border-color: var(--aqua-success);
+        }
+
+        .aq-badge.outline.warning {
+            color: var(--aqua-warning);
+            border-color: var(--aqua-warning);
+        }
+
+        .aq-badge.outline.danger {
+            color: var(--aqua-danger);
+            border-color: var(--aqua-danger);
+        }
+
+        .aq-badge.outline.info {
+            color: var(--aqua-info);
+            border-color: var(--aqua-info);
+        }
+
+        /* Subtle badges */
+        .aq-badge.subtle {
+            background: color-mix(in srgb, currentColor 10%, transparent);
+            border: none;
+        }
+
+        .aq-badge.subtle.primary {
+            color: var(--aqua-primary-700);
+        }
+
+        .aq-badge.subtle.secondary {
+            color: var(--aqua-secondary-700);
+        }
+
+        .aq-badge.subtle.success {
+            color: var(--aqua-success);
+        }
+
+        .aq-badge.subtle.warning {
+            color: var(--aqua-warning);
+        }
+
+        .aq-badge.subtle.danger {
+            color: var(--aqua-danger);
+        }
+
+        .aq-badge.subtle.info {
+            color: var(--aqua-info);
+        }
+
+        /* Glass badges */
+        .aq-badge.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+            backdrop-filter: blur(10px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+        }
+
+        .aq-badge.glass.primary {
+            color: var(--aqua-primary-600);
+        }
+
+        .aq-badge.glass.secondary {
+            color: var(--aqua-secondary-600);
+        }
+
+        /* Gradient badges */
+        .aq-badge.gradient {
+            background: linear-gradient(135deg, var(--aqua-primary-500), var(--aqua-primary-700));
+            color: var(--aqua-text-inverse);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-badge.gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .aq-badge.gradient:hover::before {
+            left: 100%;
+        }
+
+        /* ==================== BADGE SIZES ==================== */
+        .aq-badge.xs {
+            font-size: 0.625rem;
+            padding: 0.125rem 0.375rem;
+            min-width: 1rem;
+            height: 1rem;
+        }
+
+        .aq-badge.sm {
+            font-size: 0.6875rem;
+            padding: 0.25rem 0.5rem;
+            min-width: 1.125rem;
+            height: 1.125rem;
+        }
+
+        .aq-badge.md {
+            font-size: 0.75rem;
+            padding: 0.375rem 0.625rem;
+            min-width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .aq-badge.lg {
+            font-size: 0.875rem;
+            padding: 0.5rem 0.75rem;
+            min-width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .aq-badge.xl {
+            font-size: 1rem;
+            padding: 0.625rem 1rem;
+            min-width: 1.75rem;
+            height: 1.75rem;
+        }
+
+        /* ==================== BADGE SHAPES ==================== */
+        .aq-badge.pill {
+            border-radius: var(--aqua-radius-full);
+            padding-left: var(--aqua-space-3);
+            padding-right: var(--aqua-space-3);
+        }
+
+        .aq-badge.rounded {
+            border-radius: var(--aqua-radius-lg);
+        }
+
+        .aq-badge.square {
+            border-radius: var(--aqua-radius);
+            padding: var(--aqua-space-2);
+        }
+
+        /* ==================== BADGE WITH ICONS ==================== */
+        .aq-badge-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--aqua-space-1);
+            transition: transform var(--aqua-duration-200) ease;
+        }
+
+        .aq-badge:hover .aq-badge-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .aq-badge .aq-badge-icon:only-child {
+            margin: 0;
+        }
+
+        /* ==================== BADGE ANIMATIONS ==================== */
+        /* Pulse animation */
+        .aq-badge.pulse {
+            animation: aq-badge-pulse 2s infinite;
+            box-shadow: 0 0 0 0 currentColor;
+        }
+
+        @keyframes aq-badge-pulse {
+            0% {
+                box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 50%, transparent);
+            }
+            70% {
+                box-shadow: 0 0 0 6px transparent;
+            }
+            100% {
+                box-shadow: 0 0 0 0 transparent;
+            }
+        }
+
+        /* Bounce animation */
+        .aq-badge.bounce {
+            animation: aq-badge-bounce 2s infinite;
+        }
+
+        @keyframes aq-badge-bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-6px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* Shake animation */
+        .aq-badge.shake {
+            animation: aq-badge-shake 0.5s;
+        }
+
+        @keyframes aq-badge-shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+            20%, 40%, 60%, 80% { transform: translateX(3px); }
+        }
+
+        /* Spin animation */
+        .aq-badge.spin .aq-badge-icon {
+            animation: aq-badge-spin 1s linear infinite;
+        }
+
+        @keyframes aq-badge-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Float animation */
+        .aq-badge.float {
+            animation: aq-badge-float 3s ease-in-out infinite;
+        }
+
+        @keyframes aq-badge-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ==================== BADGE INTERACTIONS ==================== */
+        .aq-badge.clickable {
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-badge.clickable:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--aqua-shadow-md);
+        }
+
+        .aq-badge.clickable:active {
+            transform: translateY(0) scale(0.95);
+        }
+
+        /* Ripple effect */
+        .aq-badge.ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-badge.ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .aq-badge.ripple:active::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* ==================== BADGE STATUS INDICATORS ==================== */
+        .aq-badge.status::before {
+            content: '';
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            margin-right: var(--aqua-space-1);
+            background: currentColor;
+            animation: aq-badge-status-pulse 2s infinite;
+        }
+
+        @keyframes aq-badge-status-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .aq-badge.status.online::before {
+            background: var(--aqua-success);
+            color: var(--aqua-success);
+        }
+
+        .aq-badge.status.offline::before {
+            background: var(--aqua-gray-400);
+            color: var(--aqua-gray-400);
+        }
+
+        .aq-badge.status.busy::before {
+            background: var(--aqua-danger);
+            color: var(--aqua-danger);
+        }
+
+        .aq-badge.status.away::before {
+            background: var(--aqua-warning);
+            color: var(--aqua-warning);
+        }
+
+        /* ==================== BADGE COUNTERS ==================== */
+        .aq-badge.counter {
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+            z-index: 10;
+            animation: aq-badge-counter-pop 0.3s var(--aqua-transition-ease-out);
+        }
+
+        @keyframes aq-badge-counter-pop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ==================== BADGE GROUPS ==================== */
+        .aq-badge-group {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: var(--aqua-space-2);
+            align-items: center;
+        }
+
+        .aq-badge-group .aq-badge {
+            margin: 0;
+        }
+
+        .aq-badge-group.stacked {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* ==================== BADGE IN VARIOUS CONTEXTS ==================== */
+        /* Badge on buttons */
+        .aq-btn .aq-badge {
+            position: relative;
+            top: -1px;
+            margin-left: var(--aqua-space-2);
+        }
+
+        /* Badge on avatars */
+        .aq-avatar .aq-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(25%, 25%);
+            z-index: 1;
+            border: 2px solid var(--aqua-bg-primary);
+        }
+
+        /* Badge in navigation */
+        .aq-nav-item .aq-badge {
+            margin-left: auto;
+            margin-right: var(--aqua-space-2);
+        }
+
+        /* ==================== ADVANCED BADGE EFFECTS ==================== */
+        /* Glow effect */
+        .aq-badge.glow {
+            box-shadow: 0 0 10px currentColor;
+            animation: aq-badge-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes aq-badge-glow {
+            from {
+                box-shadow: 0 0 10px currentColor;
+            }
+            to {
+                box-shadow: 0 0 20px currentColor, 0 0 30px color-mix(in srgb, currentColor 50%, transparent);
+            }
+        }
+
+        /* Neon effect */
+        .aq-badge.neon {
+            background: transparent;
+            color: currentColor;
+            text-shadow: 
+                0 0 5px currentColor,
+                0 0 10px currentColor,
+                0 0 20px currentColor;
+            box-shadow: 
+                0 0 5px currentColor,
+                inset 0 0 5px currentColor;
+            border: 1px solid currentColor;
+            animation: aq-badge-neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes aq-badge-neon {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.8;
+            }
+        }
+
+        /* Metallic effect */
+        .aq-badge.metallic {
+            background: linear-gradient(145deg, 
+                color-mix(in srgb, currentColor 80%, white) 0%,
+                color-mix(in srgb, currentColor 60%, black) 100%);
+            color: var(--aqua-text-inverse);
+            border: none;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        /* ==================== BADGE TRANSITIONS ==================== */
+        .aq-badge.fade-in {
+            animation: aq-badge-fade-in 0.5s ease;
+        }
+
+        @keyframes aq-badge-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .aq-badge.slide-in {
+            animation: aq-badge-slide-in 0.4s ease;
+        }
+
+        @keyframes aq-badge-slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .aq-badge.scale {
+            animation: aq-badge-scale 0.3s ease;
+        }
+
+        @keyframes aq-badge-scale {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-badge.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 70%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+
+            .aq-badge.subtle {
+                background: color-mix(in srgb, currentColor 15%, transparent);
+            }
+
+            .aq-badge.outline {
+                border-width: 1px;
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-badge,
+            .aq-badge-icon {
+                animation: none;
+                transition: none;
+            }
+
+            .aq-badge:hover {
+                transform: none;
+            }
+
+            .aq-badge:hover .aq-badge-icon {
+                transform: none;
+            }
+        }
+
+        
+        
