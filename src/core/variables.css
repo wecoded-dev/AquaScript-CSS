@@ -1,0 +1,408 @@
+
+        :root {
+            /* =======================================================================
+            AQUASCRIPTCSS ULTRA ADVANCED VARIABLES SYSTEM v2.0
+            ======================================================================= */
+
+            /* ==================== GLOBAL FOUNDATIONS ==================== */
+            --aqua-version: '2.0';
+            --aqua-namespace: 'aq-';
+            --aqua-mode: 'light'; /* Dynamically changed to dark if preferred */
+            --aqua-contrast: 'normal'; /* high, low */
+
+            /* ==================== ADVANCED COLOR SYSTEM ==================== */
+            /* Primary Color Spectrum */
+            --aqua-primary-hue: 210;
+            --aqua-primary-saturation: 100%;
+            --aqua-primary: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 50%);
+            --aqua-primary-50: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 95%);
+            --aqua-primary-100: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 90%);
+            --aqua-primary-200: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 80%);
+            --aqua-primary-300: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 70%);
+            --aqua-primary-400: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 60%);
+            --aqua-primary-500: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 50%);
+            --aqua-primary-600: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 40%);
+            --aqua-primary-700: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 30%);
+            --aqua-primary-800: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 20%);
+            --aqua-primary-900: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 10%);
+            --aqua-primary-950: hsl(var(--aqua-primary-hue), var(--aqua-primary-saturation), 5%);
+
+            /* Secondary Color Spectrum */
+            --aqua-secondary-hue: 262;
+            --aqua-secondary-saturation: 70%;
+            --aqua-secondary: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 50%);
+            --aqua-secondary-50: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 95%);
+            --aqua-secondary-100: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 90%);
+            --aqua-secondary-200: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 80%);
+            --aqua-secondary-300: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 70%);
+            --aqua-secondary-400: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 60%);
+            --aqua-secondary-500: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 50%);
+            --aqua-secondary-600: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 40%);
+            --aqua-secondary-700: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 30%);
+            --aqua-secondary-800: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 20%);
+            --aqua-secondary-900: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 10%);
+            --aqua-secondary-950: hsl(var(--aqua-secondary-hue), var(--aqua-secondary-saturation), 5%);
+
+            /* Semantic Colors */
+            --aqua-success-hue: 142;
+            --aqua-success: hsl(var(--aqua-success-hue), 70%, 45%);
+            --aqua-warning-hue: 38;
+            --aqua-warning: hsl(var(--aqua-warning-hue), 90%, 50%);
+            --aqua-danger-hue: 0;
+            --aqua-danger: hsl(var(--aqua-danger-hue), 85%, 55%);
+            --aqua-info-hue: 192;
+            --aqua-info: hsl(var(--aqua-info-hue), 90%, 45%);
+
+            /* Neutral Colors - Adaptive to theme */
+            --aqua-gray-hue: 220;
+            --aqua-gray-saturation: 15%;
+            --aqua-white: hsl(0, 0%, 100%);
+            --aqua-black: hsl(0, 0%, 0%);
+            --aqua-gray-50: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 97%);
+            --aqua-gray-100: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 93%);
+            --aqua-gray-200: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 88%);
+            --aqua-gray-300: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 78%);
+            --aqua-gray-400: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 65%);
+            --aqua-gray-500: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 52%);
+            --aqua-gray-600: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 42%);
+            --aqua-gray-700: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 33%);
+            --aqua-gray-800: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 23%);
+            --aqua-gray-900: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 15%);
+            --aqua-gray-950: hsl(var(--aqua-gray-hue), var(--aqua-gray-saturation), 10%);
+
+            /* Surface Colors */
+            --aqua-bg-primary: var(--aqua-white);
+            --aqua-bg-secondary: var(--aqua-gray-50);
+            --aqua-bg-tertiary: var(--aqua-gray-100);
+            --aqua-bg-inverse: var(--aqua-gray-900);
+
+            /* Text Colors */
+            --aqua-text-primary: var(--aqua-gray-900);
+            --aqua-text-secondary: var(--aqua-gray-700);
+            --aqua-text-tertiary: var(--aqua-gray-500);
+            --aqua-text-inverse: var(--aqua-white);
+            --aqua-text-heading: var(--aqua-gray-950);
+
+            /* Border Colors */
+            --aqua-border-primary: var(--aqua-gray-200);
+            --aqua-border-secondary: var(--aqua-gray-100);
+            --aqua-border-tertiary: var(--aqua-gray-300);
+            --aqua-border-contrast: var(--aqua-gray-400);
+
+            /* ==================== TYPOGRAPHY SYSTEM ==================== */
+            /* Font Families */
+            --aqua-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+            --aqua-font-serif: 'Georgia', 'Times New Roman', serif;
+            --aqua-font-mono: 'Fira Code', 'Roboto Mono', 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            --aqua-font-display: 'Poppins', var(--aqua-font-sans);
+
+            /* Font Sizes - Fluid typography scale */
+            --aqua-text-scale-ratio: 1.2;
+            --aqua-text-xs: clamp(0.75rem, 0.725rem + 0.125vw, 0.8rem);
+            --aqua-text-sm: clamp(0.875rem, 0.8313rem + 0.2188vw, 1rem);
+            --aqua-text-base: clamp(1rem, 0.9375rem + 0.3125vw, 1.25rem);
+            --aqua-text-lg: clamp(1.125rem, 1.0438rem + 0.4063vw, 1.5rem);
+            --aqua-text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+            --aqua-text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2.125rem);
+            --aqua-text-3xl: clamp(1.875rem, 1.6313rem + 1.2188vw, 2.625rem);
+            --aqua-text-4xl: clamp(2.25rem, 1.875rem + 1.875vw, 3.375rem);
+            --aqua-text-5xl: clamp(2.75rem, 2.1875rem + 2.8125vw, 4.25rem);
+            --aqua-text-6xl: clamp(3.375rem, 2.5313rem + 4.2188vw, 5.5rem);
+
+            /* Font Weights */
+            --aqua-font-thin: 100;
+            --aqua-font-extralight: 200;
+            --aqua-font-light: 300;
+            --aqua-font-normal: 400;
+            --aqua-font-medium: 500;
+            --aqua-font-semibold: 600;
+            --aqua-font-bold: 700;
+            --aqua-font-extrabold: 800;
+            --aqua-font-black: 900;
+
+            /* Line Heights */
+            --aqua-leading-none: 1;
+            --aqua-leading-tight: 1.25;
+            --aqua-leading-snug: 1.375;
+            --aqua-leading-normal: 1.5;
+            --aqua-leading-relaxed: 1.625;
+            --aqua-leading-loose: 2;
+
+            /* Letter Spacing */
+            --aqua-tracking-tighter: -0.05em;
+            --aqua-tracking-tight: -0.025em;
+            --aqua-tracking-normal: 0em;
+            --aqua-tracking-wide: 0.025em;
+            --aqua-tracking-wider: 0.05em;
+            --aqua-tracking-widest: 0.1em;
+
+            /* ==================== SPACING & SIZING SYSTEM ==================== */
+            /* Spacing Scale - Based on 4px unit */
+            --aqua-space-unit: 0.25rem;
+            --aqua-space-0: 0;
+            --aqua-space-1: calc(var(--aqua-space-unit) * 1);
+            --aqua-space-2: calc(var(--aqua-space-unit) * 2);
+            --aqua-space-3: calc(var(--aqua-space-unit) * 3);
+            --aqua-space-4: calc(var(--aqua-space-unit) * 4);
+            --aqua-space-5: calc(var(--aqua-space-unit) * 5);
+            --aqua-space-6: calc(var(--aqua-space-unit) * 6);
+            --aqua-space-7: calc(var(--aqua-space-unit) * 7);
+            --aqua-space-8: calc(var(--aqua-space-unit) * 8);
+            --aqua-space-9: calc(var(--aqua-space-unit) * 9);
+            --aqua-space-10: calc(var(--aqua-space-unit) * 10);
+            --aqua-space-12: calc(var(--aqua-space-unit) * 12);
+            --aqua-space-16: calc(var(--aqua-space-unit) * 16);
+            --aqua-space-20: calc(var(--aqua-space-unit) * 20);
+            --aqua-space-24: calc(var(--aqua-space-unit) * 24);
+            --aqua-space-32: calc(var(--aqua-space-unit) * 32);
+            --aqua-space-40: calc(var(--aqua-space-unit) * 40);
+            --aqua-space-48: calc(var(--aqua-space-unit) * 48);
+            --aqua-space-56: calc(var(--aqua-space-unit) * 56);
+            --aqua-space-64: calc(var(--aqua-space-unit) * 64);
+
+            /* Sizing Scale */
+            --aqua-size-0: 0;
+            --aqua-size-1: 0.25rem;
+            --aqua-size-2: 0.5rem;
+            --aqua-size-3: 0.75rem;
+            --aqua-size-4: 1rem;
+            --aqua-size-5: 1.25rem;
+            --aqua-size-6: 1.5rem;
+            --aqua-size-7: 1.75rem;
+            --aqua-size-8: 2rem;
+            --aqua-size-9: 2.25rem;
+            --aqua-size-10: 2.5rem;
+            --aqua-size-12: 3rem;
+            --aqua-size-16: 4rem;
+            --aqua-size-20: 5rem;
+            --aqua-size-24: 6rem;
+            --aqua-size-32: 8rem;
+            --aqua-size-40: 10rem;
+            --aqua-size-48: 12rem;
+            --aqua-size-56: 14rem;
+            --aqua-size-64: 16rem;
+            --aqua-size-auto: auto;
+            --aqua-size-px: 1px;
+            --aqua-size-full: 100%;
+            --aqua-size-screen: 100vw;
+            --aqua-size-min: min-content;
+            --aqua-size-max: max-content;
+            --aqua-size-fit: fit-content;
+
+            /* ==================== BORDER & EFFECTS SYSTEM ==================== */
+            /* Border Radius */
+            --aqua-radius-none: 0;
+            --aqua-radius-sm: 0.125rem;
+            --aqua-radius: 0.25rem;
+            --aqua-radius-md: 0.375rem;
+            --aqua-radius-lg: 0.5rem;
+            --aqua-radius-xl: 0.75rem;
+            --aqua-radius-2xl: 1rem;
+            --aqua-radius-3xl: 1.5rem;
+            --aqua-radius-full: 9999px;
+
+            /* Border Width */
+            --aqua-border-width: 1px;
+            --aqua-border-width-0: 0;
+            --aqua-border-width-2: 2px;
+            --aqua-border-width-4: 4px;
+            --aqua-border-width-8: 8px;
+
+            /* Shadows - Multi-layered system */
+            --aqua-shadow-color: 220 3% 15%;
+            --aqua-shadow-strength: 1%;
+            
+            --aqua-shadow-sm: 
+                0 1px 2px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 9%));
+            --aqua-shadow: 
+                0 1px 3px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 12%)),
+                0 1px 2px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 9%));
+            --aqua-shadow-md: 
+                0 4px 6px -1px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 13%)),
+                0 2px 4px -2px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 10%));
+            --aqua-shadow-lg: 
+                0 10px 15px -3px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 15%)),
+                0 4px 6px -4px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 12%));
+            --aqua-shadow-xl: 
+                0 20px 25px -5px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 18%)),
+                0 8px 10px -6px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 14%));
+            --aqua-shadow-2xl: 
+                0 25px 50px -12px hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 25%));
+            --aqua-shadow-inner: 
+                inset 0 2px 4px 0 hsl(var(--aqua-shadow-color) / calc(var(--aqua-shadow-strength) + 10%));
+
+            /* Opacity */
+            --aqua-opacity-0: 0;
+            --aqua-opacity-5: 0.05;
+            --aqua-opacity-10: 0.1;
+            --aqua-opacity-15: 0.15;
+            --aqua-opacity-20: 0.2;
+            --aqua-opacity-25: 0.25;
+            --aqua-opacity-30: 0.3;
+            --aqua-opacity-35: 0.35;
+            --aqua-opacity-40: 0.4;
+            --aqua-opacity-45: 0.45;
+            --aqua-opacity-50: 0.5;
+            --aqua-opacity-55: 0.55;
+            --aqua-opacity-60: 0.6;
+            --aqua-opacity-65: 0.65;
+            --aqua-opacity-70: 0.7;
+            --aqua-opacity-75: 0.75;
+            --aqua-opacity-80: 0.8;
+            --aqua-opacity-85: 0.85;
+            --aqua-opacity-90: 0.9;
+            --aqua-opacity-95: 0.95;
+            --aqua-opacity-100: 1;
+
+            /* ==================== LAYOUT & GRID SYSTEM ==================== */
+            /* Breakpoints */
+            --aqua-breakpoint-xs: 320px;
+            --aqua-breakpoint-sm: 480px;
+            --aqua-breakpoint-md: 768px;
+            --aqua-breakpoint-lg: 1024px;
+            --aqua-breakpoint-xl: 1280px;
+            --aqua-breakpoint-2xl: 1536px;
+
+            /* Container Widths */
+            --aqua-container-xs: 320px;
+            --aqua-container-sm: 640px;
+            --aqua-container-md: 768px;
+            --aqua-container-lg: 1024px;
+            --aqua-container-xl: 1280px;
+            --aqua-container-2xl: 1536px;
+
+            /* Z-index layers */
+            --aqua-z-negative: -1;
+            --aqua-z-0: 0;
+            --aqua-z-1: 10;
+            --aqua-z-2: 20;
+            --aqua-z-3: 30;
+            --aqua-z-4: 40;
+            --aqua-z-5: 50;
+            --aqua-z-10: 100;
+            --aqua-z-20: 200;
+            --aqua-z-30: 300;
+            --aqua-z-40: 400;
+            --aqua-z-50: 500;
+            --aqua-z-auto: auto;
+
+            /* Grid and Flex */
+            --aqua-grid-cols: 12;
+            --aqua-grid-gap: var(--aqua-space-4);
+            --aqua-flex-basis: auto;
+
+            /* ==================== ANIMATION & TRANSITION SYSTEM ==================== */
+            /* Transition Timing */
+            --aqua-transition-linear: linear;
+            --aqua-transition-ease: ease;
+            --aqua-transition-ease-in: ease-in;
+            --aqua-transition-ease-out: ease-out;
+            --aqua-transition-ease-in-out: ease-in-out;
+
+            /* Transition Durations */
+            --aqua-duration-0: 0ms;
+            --aqua-duration-75: 75ms;
+            --aqua-duration-100: 100ms;
+            --aqua-duration-150: 150ms;
+            --aqua-duration-200: 200ms;
+            --aqua-duration-300: 300ms;
+            --aqua-duration-500: 500ms;
+            --aqua-duration-700: 700ms;
+            --aqua-duration-1000: 1000ms;
+
+            /* Animation Keyframes */
+            --aqua-bounce: bounce 2s infinite;
+            --aqua-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            --aqua-spin: spin 1s linear infinite;
+            --aqua-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            --aqua-fade-in: fadeIn 0.5s ease-out;
+            --aqua-fade-out: fadeOut 0.5s ease-in;
+            --aqua-slide-in: slideIn 0.5s ease-out;
+            --aqua-slide-out: slideOut 0.5s ease-in;
+
+            /* ==================== COMPONENT VARIABLES ==================== */
+            /* Button Variables */
+            --aqua-btn-padding-x: var(--aqua-space-4);
+            --aqua-btn-padding-y: var(--aqua-space-2);
+            --aqua-btn-radius: var(--aqua-radius-md);
+            --aqua-btn-font-weight: var(--aqua-font-medium);
+            --aqua-btn-border-width: var(--aqua-border-width);
+            --aqua-btn-focus-shadow: 0 0 0 3px hsl(var(--aqua-primary-hue) 100% 50% / 0.3);
+
+            /* Card Variables */
+            --aqua-card-padding: var(--aqua-space-6);
+            --aqua-card-bg: var(--aqua-bg-primary);
+            --aqua-card-radius: var(--aqua-radius-lg);
+            --aqua-card-shadow: var(--aqua-shadow-sm);
+            --aqua-card-border: var(--aqua-border-width) solid var(--aqua-border-primary);
+
+            /* Form Variables */
+            --aqua-input-padding-x: var(--aqua-space-3);
+            --aqua-input-padding-y: var(--aqua-space-2);
+            --aqua-input-radius: var(--aqua-radius);
+            --aqua-input-border: var(--aqua-border-width) solid var(--aqua-border-primary);
+            --aqua-input-focus-border: var(--aqua-border-width-2) solid var(--aqua-primary-500);
+            --aqua-input-focus-shadow: var(--aqua-shadow-sm);
+
+            /* Navigation Variables */
+            --aqua-nav-height: 4rem;
+            --aqua-nav-bg: var(--aqua-bg-primary);
+            --aqua-nav-shadow: var(--aqua-shadow-sm);
+            --aqua-nav-z-index: var(--aqua-z-10);
+
+            /* ==================== DARK MODE OVERRIDES ==================== */
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --aqua-mode: 'dark';
+                    
+                    /* Surface Colors */
+                    --aqua-bg-primary: var(--aqua-gray-900);
+                    --aqua-bg-secondary: var(--aqua-gray-800);
+                    --aqua-bg-tertiary: var(--aqua-gray-700);
+                    --aqua-bg-inverse: var(--aqua-white);
+                    
+                    /* Text Colors */
+                    --aqua-text-primary: var(--aqua-gray-100);
+                    --aqua-text-secondary: var(--aqua-gray-300);
+                    --aqua-text-tertiary: var(--aqua-gray-400);
+                    --aqua-text-inverse: var(--aqua-gray-900);
+                    --aqua-text-heading: var(--aqua-white);
+                    
+                    /* Border Colors */
+                    --aqua-border-primary: var(--aqua-gray-700);
+                    --aqua-border-secondary: var(--aqua-gray-600);
+                    --aqua-border-tertiary: var(--aqua-gray-500);
+                    --aqua-border-contrast: var(--aqua-gray-400);
+                    
+                    /* Shadow adjustments for dark mode */
+                    --aqua-shadow-color: 220 3% 5%;
+                    --aqua-shadow-strength: 15%;
+                }
+            }
+
+            /* ==================== HIGH CONTRAST OVERRIDES ==================== */
+            @media (prefers-contrast: high) {
+                :root {
+                    --aqua-contrast: 'high';
+                    --aqua-border-width: 2px;
+                    --aqua-text-primary: var(--aqua-black);
+                    --aqua-bg-primary: var(--aqua-white);
+                }
+            }
+
+            /* ==================== REDUCED MOTION OVERRIDES ==================== */
+            @media (prefers-reduced-motion: reduce) {
+                :root {
+                    --aqua-duration-100: 0ms;
+                    --aqua-duration-150: 0ms;
+                    --aqua-duration-200: 0ms;
+                    --aqua-duration-300: 0ms;
+                    --aqua-duration-500: 0ms;
+                    --aqua-duration-700: 0ms;
+                    --aqua-duration-1000: 0ms;
+                }
+            }
+        }
+
+        
+            
