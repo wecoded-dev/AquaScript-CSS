@@ -1,0 +1,599 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED FORMS SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== FORM BASE STYLES ==================== */
+        .aq-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-6);
+            width: 100%;
+        }
+
+        /* Form group */
+        .aq-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-2);
+            position: relative;
+        }
+
+        /* Form row */
+        .aq-form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--aqua-space-4);
+        }
+
+        /* ==================== FORM LABELS ==================== */
+        .aq-form-label {
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-2);
+            font-size: var(--aqua-text-sm);
+            font-weight: var(--aqua-font-medium);
+            color: var(--aqua-text-primary);
+            margin-bottom: var(--aqua-space-1);
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-label-required::after {
+            content: '*';
+            color: var(--aqua-danger);
+            margin-left: var(--aqua-space-1);
+        }
+
+        /* ==================== FORM CONTROLS ==================== */
+        .aq-form-control {
+            /* Layout */
+            display: flex;
+            align-items: center;
+            width: 100%;
+            
+            /* Typography */
+            font-family: inherit;
+            font-size: var(--aqua-text-base);
+            font-weight: var(--aqua-font-normal);
+            
+            /* Sizing */
+            min-height: 3rem;
+            padding: var(--aqua-space-3) var(--aqua-space-4);
+            
+            /* Borders & Effects */
+            border: 2px solid var(--aqua-border-primary);
+            border-radius: var(--aqua-radius-lg);
+            background: var(--aqua-bg-primary);
+            box-shadow: var(--aqua-shadow-sm);
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-200) var(--aqua-transition-ease-out);
+            
+            /* Interactions */
+            outline: none;
+        }
+
+        /* Focus state */
+        .aq-form-control:focus {
+            border-color: var(--aqua-primary-500);
+            box-shadow: 
+                0 0 0 3px color-mix(in srgb, var(--aqua-primary-500) 20%, transparent),
+                var(--aqua-shadow-md);
+            transform: translateY(-1px);
+        }
+
+        /* Hover state */
+        .aq-form-control:hover {
+            border-color: var(--aqua-primary-300);
+            box-shadow: var(--aqua-shadow-md);
+        }
+
+        /* Disabled state */
+        .aq-form-control:disabled {
+            background: var(--aqua-bg-secondary);
+            border-color: var(--aqua-border-primary);
+            color: var(--aqua-text-tertiary);
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Readonly state */
+        .aq-form-control[readonly] {
+            background: var(--aqua-bg-secondary);
+            border-color: var(--aqua-border-secondary);
+            cursor: default;
+        }
+
+        /* ==================== FORM CONTROL SIZES ==================== */
+        .aq-form-control-sm {
+            min-height: 2.5rem;
+            padding: var(--aqua-space-2) var(--aqua-space-3);
+            font-size: var(--aqua-text-sm);
+        }
+
+        .aq-form-control-lg {
+            min-height: 3.5rem;
+            padding: var(--aqua-space-4) var(--aqua-space-5);
+            font-size: var(--aqua-text-lg);
+        }
+
+        /* ==================== FORM CONTROL VARIANTS ==================== */
+        /* Outline variant */
+        .aq-form-control.outline {
+            background: transparent;
+            border-width: 2px;
+        }
+
+        /* Filled variant */
+        .aq-form-control.filled {
+            background: var(--aqua-bg-secondary);
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        .aq-form-control.filled:focus {
+            background: var(--aqua-bg-primary);
+            border-color: var(--aqua-primary-500);
+        }
+
+        /* Glass variant */
+        .aq-form-control.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+            backdrop-filter: blur(10px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+        }
+
+        /* ==================== SPECIFIC FORM CONTROLS ==================== */
+        /* Textarea */
+        .aq-form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: var(--aqua-leading-relaxed);
+        }
+
+        /* Select */
+        .aq-form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right var(--aqua-space-3) center;
+            background-size: 1.25em;
+            padding-right: var(--aqua-space-10);
+        }
+
+        /* File input */
+        .aq-form-file {
+            padding: var(--aqua-space-3);
+            cursor: pointer;
+        }
+
+        .aq-form-file::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .aq-form-file::before {
+            content: 'Choose file';
+            display: inline-block;
+            background: var(--aqua-primary-500);
+            color: white;
+            padding: var(--aqua-space-2) var(--aqua-space-4);
+            border-radius: var(--aqua-radius);
+            margin-right: var(--aqua-space-3);
+            font-weight: var(--aqua-font-medium);
+            transition: background var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-file:hover::before {
+            background: var(--aqua-primary-600);
+        }
+
+        /* Range slider */
+        .aq-form-range {
+            height: auto;
+            padding: var(--aqua-space-4) 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .aq-form-range::-webkit-slider-thumb {
+            appearance: none;
+            height: 1.5rem;
+            width: 1.5rem;
+            background: var(--aqua-primary-500);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: var(--aqua-shadow-md);
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-range::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: var(--aqua-primary-600);
+        }
+
+        .aq-form-range::-webkit-slider-runnable-track {
+            height: 0.5rem;
+            background: var(--aqua-bg-secondary);
+            border-radius: var(--aqua-radius-full);
+        }
+
+        /* ==================== FORM VALIDATION ==================== */
+        /* Valid state */
+        .aq-form-control.valid {
+            border-color: var(--aqua-success);
+            padding-right: var(--aqua-space-10);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310b981'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right var(--aqua-space-3) center;
+            background-size: 1.25em;
+        }
+
+        .aq-form-control.valid:focus {
+            border-color: var(--aqua-success);
+            box-shadow: 
+                0 0 0 3px color-mix(in srgb, var(--aqua-success) 20%, transparent),
+                var(--aqua-shadow-md);
+        }
+
+        /* Invalid state */
+        .aq-form-control.invalid {
+            border-color: var(--aqua-danger);
+            padding-right: var(--aqua-space-10);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ef4444'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right var(--aqua-space-3) center;
+            background-size: 1.25em;
+        }
+
+        .aq-form-control.invalid:focus {
+            border-color: var(--aqua-danger);
+            box-shadow: 
+                0 0 0 3px color-mix(in srgb, var(--aqua-danger) 20%, transparent),
+                var(--aqua-shadow-md);
+        }
+
+        /* Validation message */
+        .aq-form-feedback {
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-2);
+            font-size: var(--aqua-text-sm);
+            margin-top: var(--aqua-space-1);
+            animation: aq-form-fade-in var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-feedback.valid {
+            color: var(--aqua-success);
+        }
+
+        .aq-form-feedback.invalid {
+            color: var(--aqua-danger);
+        }
+
+        @keyframes aq-form-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== FORM CHECKBOXES & RADIOS ==================== */
+        .aq-form-check {
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-3);
+            cursor: pointer;
+            position: relative;
+            padding: var(--aqua-space-2) 0;
+        }
+
+        .aq-form-check-input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Custom checkbox */
+        .aq-form-checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid var(--aqua-border-primary);
+            border-radius: var(--aqua-radius);
+            background: var(--aqua-bg-primary);
+            transition: all var(--aqua-duration-200) ease;
+            position: relative;
+        }
+
+        .aq-form-check-input:checked ~ .aq-form-checkbox {
+            background: var(--aqua-primary-500);
+            border-color: var(--aqua-primary-500);
+        }
+
+        .aq-form-check-input:checked ~ .aq-form-checkbox::after {
+            content: '';
+            width: 0.5rem;
+            height: 0.5rem;
+            background: white;
+            border-radius: 1px;
+            transform: scale(1);
+            transition: transform var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-check-input:focus ~ .aq-form-checkbox {
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--aqua-primary-500) 20%, transparent);
+        }
+
+        /* Custom radio */
+        .aq-form-radio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid var(--aqua-border-primary);
+            border-radius: 50%;
+            background: var(--aqua-bg-primary);
+            transition: all var(--aqua-duration-200) ease;
+            position: relative;
+        }
+
+        .aq-form-check-input:checked ~ .aq-form-radio {
+            background: var(--aqua-primary-500);
+            border-color: var(--aqua-primary-500);
+        }
+
+        .aq-form-check-input:checked ~ .aq-form-radio::after {
+            content: '';
+            width: 0.5rem;
+            height: 0.5rem;
+            background: white;
+            border-radius: 50%;
+            transform: scale(1);
+            transition: transform var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-check-input:focus ~ .aq-form-radio {
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--aqua-primary-500) 20%, transparent);
+        }
+
+        /* Switch */
+        .aq-form-switch {
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-3);
+            cursor: pointer;
+            position: relative;
+            padding: var(--aqua-space-2) 0;
+        }
+
+        .aq-form-switch-track {
+            width: 3rem;
+            height: 1.5rem;
+            background: var(--aqua-bg-secondary);
+            border-radius: var(--aqua-radius-full);
+            position: relative;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-form-switch-thumb {
+            width: 1.25rem;
+            height: 1.25rem;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 0.125rem;
+            left: 0.125rem;
+            transition: all var(--aqua-duration-200) ease;
+            box-shadow: var(--aqua-shadow-sm);
+        }
+
+        .aq-form-check-input:checked ~ .aq-form-switch-track {
+            background: var(--aqua-primary-500);
+        }
+
+        .aq-form-check-input:checked ~ .aq-form-switch-track .aq-form-switch-thumb {
+            transform: translateX(1.5rem);
+        }
+
+        .aq-form-check-input:focus ~ .aq-form-switch-track {
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--aqua-primary-500) 20%, transparent);
+        }
+
+        /* ==================== FORM ANIMATIONS ==================== */
+        /* Floating labels */
+        .aq-form-floating {
+            position: relative;
+        }
+
+        .aq-form-floating .aq-form-control {
+            padding-top: var(--aqua-space-5);
+            padding-bottom: var(--aqua-space-1);
+        }
+
+        .aq-form-floating .aq-form-label {
+            position: absolute;
+            top: 50%;
+            left: var(--aqua-space-4);
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: all var(--aqua-duration-200) ease;
+            background: var(--aqua-bg-primary);
+            padding: 0 var(--aqua-space-1);
+            margin: 0;
+            z-index: 1;
+        }
+
+        .aq-form-floating .aq-form-control:focus ~ .aq-form-label,
+        .aq-form-floating .aq-form-control:not(:placeholder-shown) ~ .aq-form-label {
+            top: 0;
+            left: var(--aqua-space-3);
+            transform: translateY(-50%) scale(0.85);
+            color: var(--aqua-primary-500);
+        }
+
+        /* Input with icon */
+        .aq-form-icon {
+            position: relative;
+        }
+
+        .aq-form-icon .aq-form-control {
+            padding-left: var(--aqua-space-10);
+        }
+
+        .aq-form-icon-prefix {
+            position: absolute;
+            left: var(--aqua-space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--aqua-text-tertiary);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .aq-form-icon .aq-form-control:focus ~ .aq-form-icon-prefix {
+            color: var(--aqua-primary-500);
+        }
+
+        /* Loading state */
+        .aq-form-loading .aq-form-control {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' stroke='%23e5e7eb' stroke-width='4'%3E%3C/circle%3E%3Cpath fill='%233b82f6' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right var(--aqua-space-3) center;
+            background-size: 1.25em;
+            animation: aq-form-spin 1s linear infinite;
+        }
+
+        @keyframes aq-form-spin {
+            0% { background-position: right var(--aqua-space-3) center; }
+            100% { background-position: right var(--aqua-space-3) center; }
+        }
+
+        /* Shake animation for invalid fields */
+        .aq-form-control.shake {
+            animation: aq-form-shake 0.5s ease;
+        }
+
+        @keyframes aq-form-shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        /* ==================== FORM LAYOUTS ==================== */
+        /* Form sections */
+        .aq-form-section {
+            padding: var(--aqua-space-6);
+            background: var(--aqua-bg-secondary);
+            border-radius: var(--aqua-radius-xl);
+            border: 1px solid var(--aqua-border-primary);
+            margin-bottom: var(--aqua-space-6);
+        }
+
+        .aq-form-section-title {
+            font-size: var(--aqua-text-lg);
+            font-weight: var(--aqua-font-semibold);
+            color: var(--aqua-text-heading);
+            margin-bottom: var(--aqua-space-4);
+            padding-bottom: var(--aqua-space-2);
+            border-bottom: 2px solid var(--aqua-primary-100);
+        }
+
+        /* Form groups */
+        .aq-form-group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--aqua-space-6);
+        }
+
+        /* ==================== FORM BUTTONS ==================== */
+        .aq-form-actions {
+            display: flex;
+            gap: var(--aqua-space-3);
+            justify-content: flex-end;
+            margin-top: var(--aqua-space-6);
+            padding-top: var(--aqua-space-4);
+            border-top: 1px solid var(--aqua-border-primary);
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-form-control.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 70%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+
+            .aq-form-floating .aq-form-label {
+                background: var(--aqua-bg-primary);
+            }
+
+            .aq-form-section {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 95%, transparent);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-form-control,
+            .aq-form-label,
+            .aq-form-checkbox,
+            .aq-form-radio,
+            .aq-form-switch-track,
+            .aq-form-switch-thumb {
+                transition: none;
+                animation: none;
+            }
+
+            .aq-form-control:focus {
+                transform: none;
+            }
+        }
+
+        /* Demo styles - not part of the forms.css */
+        .demo-container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .demo-section {
+            background: var(--aqua-bg-primary);
+            padding: 2rem;
+            border-radius: var(--aqua-radius-xl);
+            border: 1px solid var(--aqua-border-primary);
+            margin-bottom: 2rem;
+            box-shadow: var(--aqua-shadow-sm);
+        }
+
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--aqua-text-heading);
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
