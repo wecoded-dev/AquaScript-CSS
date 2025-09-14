@@ -1,0 +1,582 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED ALERTS SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== ALERT BASE STYLES ==================== */
+        .aq-alert {
+            /* Layout */
+            display: flex;
+            align-items: flex-start;
+            gap: var(--aqua-space-4);
+            
+            /* Sizing */
+            width: 100%;
+            padding: var(--aqua-space-5) var(--aqua-space-6);
+            
+            /* Borders & Effects */
+            border-radius: var(--aqua-radius-2xl);
+            border: 1px solid transparent;
+            background: var(--aqua-bg-primary);
+            box-shadow: var(--aqua-shadow-lg);
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) var(--aqua-transition-ease-out);
+            
+            /* Animation */
+            animation: aq-alert-slide-in 0.6s var(--aqua-transition-ease-out);
+            
+            /* Performance */
+            will-change: transform, opacity, height;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes aq-alert-slide-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ==================== ALERT VARIANTS ==================== */
+        /* Info alert */
+        .aq-alert.info {
+            background: color-mix(in srgb, var(--aqua-info) 10%, transparent);
+            border-color: color-mix(in srgb, var(--aqua-info) 30%, transparent);
+            color: var(--aqua-info);
+        }
+
+        /* Success alert */
+        .aq-alert.success {
+            background: color-mix(in srgb, var(--aqua-success) 10%, transparent);
+            border-color: color-mix(in srgb, var(--aqua-success) 30%, transparent);
+            color: var(--aqua-success);
+        }
+
+        /* Warning alert */
+        .aq-alert.warning {
+            background: color-mix(in srgb, var(--aqua-warning) 10%, transparent);
+            border-color: color-mix(in srgb, var(--aqua-warning) 30%, transparent);
+            color: var(--aqua-warning);
+        }
+
+        /* Danger alert */
+        .aq-alert.danger {
+            background: color-mix(in srgb, var(--aqua-danger) 10%, transparent);
+            border-color: color-mix(in srgb, var(--aqua-danger) 30%, transparent);
+            color: var(--aqua-danger);
+        }
+
+        /* Primary alert */
+        .aq-alert.primary {
+            background: color-mix(in srgb, var(--aqua-primary-500) 10%, transparent);
+            border-color: color-mix(in srgb, var(--aqua-primary-500) 30%, transparent);
+            color: var(--aqua-primary-600);
+        }
+
+        /* Secondary alert */
+        .aq-alert.secondary {
+            background: color-mix(in srgb, var(--aqua-secondary-500) 10%, transparent);
+            border-color: color-mix(in srgb, var(--aqua-secondary-500) 30%, transparent);
+            color: var(--aqua-secondary-600);
+        }
+
+        /* ==================== ALERT STYLES ==================== */
+        /* Solid style */
+        .aq-alert.solid {
+            color: var(--aqua-text-inverse);
+        }
+
+        .aq-alert.solid.info {
+            background: var(--aqua-info);
+            border-color: color-mix(in srgb, var(--aqua-info) 80%, black);
+        }
+
+        .aq-alert.solid.success {
+            background: var(--aqua-success);
+            border-color: color-mix(in srgb, var(--aqua-success) 80%, black);
+        }
+
+        .aq-alert.solid.warning {
+            background: var(--aqua-warning);
+            border-color: color-mix(in srgb, var(--aqua-warning) 80%, black);
+            color: var(--aqua-gray-900);
+        }
+
+        .aq-alert.solid.danger {
+            background: var(--aqua-danger);
+            border-color: color-mix(in srgb, var(--aqua-danger) 80%, black);
+        }
+
+        .aq-alert.solid.primary {
+            background: var(--aqua-primary-600);
+            border-color: var(--aqua-primary-700);
+        }
+
+        .aq-alert.solid.secondary {
+            background: var(--aqua-secondary-600);
+            border-color: var(--aqua-secondary-700);
+        }
+
+        /* Outline style */
+        .aq-alert.outline {
+            background: transparent;
+        }
+
+        .aq-alert.outline.info {
+            border-color: var(--aqua-info);
+            color: var(--aqua-info);
+        }
+
+        .aq-alert.outline.success {
+            border-color: var(--aqua-success);
+            color: var(--aqua-success);
+        }
+
+        .aq-alert.outline.warning {
+            border-color: var(--aqua-warning);
+            color: var(--aqua-warning);
+        }
+
+        .aq-alert.outline.danger {
+            border-color: var(--aqua-danger);
+            color: var(--aqua-danger);
+        }
+
+        .aq-alert.outline.primary {
+            border-color: var(--aqua-primary-500);
+            color: var(--aqua-primary-600);
+        }
+
+        .aq-alert.outline.secondary {
+            border-color: var(--aqua-secondary-500);
+            color: var(--aqua-secondary-600);
+        }
+
+        /* Glass style */
+        .aq-alert.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 85%, transparent);
+            backdrop-filter: blur(20px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+        }
+
+        /* Gradient style */
+        .aq-alert.gradient {
+            background: linear-gradient(135deg, 
+                color-mix(in srgb, var(--aqua-primary-500) 20%, transparent) 0%,
+                color-mix(in srgb, var(--aqua-secondary-500) 20%, transparent) 100%);
+            border: none;
+            color: var(--aqua-primary-700);
+        }
+
+        /* ==================== ALERT SIZES ==================== */
+        .aq-alert.sm {
+            padding: var(--aqua-space-3) var(--aqua-space-4);
+            border-radius: var(--aqua-radius-xl);
+        }
+
+        .aq-alert.md {
+            padding: var(--aqua-space-4) var(--aqua-space-5);
+            border-radius: var(--aqua-radius-xl);
+        }
+
+        .aq-alert.lg {
+            padding: var(--aqua-space-6) var(--aqua-space-7);
+            border-radius: var(--aqua-radius-2xl);
+        }
+
+        .aq-alert.xl {
+            padding: var(--aqua-space-7) var(--aqua-space-8);
+            border-radius: var(--aqua-radius-2xl);
+            font-size: var(--aqua-text-lg);
+        }
+
+        /* ==================== ALERT CONTENT ==================== */
+        .aq-alert-icon {
+            flex-shrink: 0;
+            font-size: 1.5em;
+            margin-top: 0.125em;
+            animation: aq-alert-icon-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes aq-alert-icon-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .aq-alert-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .aq-alert-title {
+            font-size: var(--aqua-text-lg);
+            font-weight: var(--aqua-font-semibold);
+            margin-bottom: var(--aqua-space-2);
+            line-height: var(--aqua-leading-tight);
+        }
+
+        .aq-alert-description {
+            font-size: var(--aqua-text-sm);
+            line-height: var(--aqua-leading-relaxed);
+            opacity: 0.9;
+        }
+
+        .aq-alert-actions {
+            display: flex;
+            gap: var(--aqua-space-2);
+            margin-top: var(--aqua-space-3);
+        }
+
+        /* ==================== ALERT CLOSE BUTTON ==================== */
+        .aq-alert-close {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border: none;
+            background: transparent;
+            border-radius: var(--aqua-radius-full);
+            color: inherit;
+            opacity: 0.7;
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+            margin-top: -0.25rem;
+            margin-right: -0.5rem;
+        }
+
+        .aq-alert-close:hover {
+            opacity: 1;
+            background: color-mix(in srgb, currentColor 20%, transparent);
+            transform: rotate(90deg);
+        }
+
+        .aq-alert-close:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+
+        /* ==================== ALERT ANIMATIONS ==================== */
+        /* Slide out animation */
+        .aq-alert.closing {
+            animation: aq-alert-slide-out 0.4s var(--aqua-transition-ease-out) forwards;
+        }
+
+        @keyframes aq-alert-slide-out {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                max-height: 200px;
+                margin-bottom: var(--aqua-space-4);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+                max-height: 0;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        /* Bounce animation */
+        .aq-alert.bounce {
+            animation: aq-alert-bounce 0.8s var(--aqua-transition-ease-out);
+        }
+
+        @keyframes aq-alert-bounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.8);
+            }
+            50% {
+                transform: translateY(10px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Fade animation */
+        .aq-alert.fade {
+            animation: aq-alert-fade 0.6s ease;
+        }
+
+        @keyframes aq-alert-fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Shake animation */
+        .aq-alert.shake {
+            animation: aq-alert-shake 0.5s ease;
+        }
+
+        @keyframes aq-alert-shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+
+        /* Pulse animation */
+        .aq-alert.pulse {
+            animation: aq-alert-pulse 2s infinite;
+        }
+
+        @keyframes aq-alert-pulse {
+            0%, 100% {
+                box-shadow: var(--aqua-shadow-lg);
+            }
+            50% {
+                box-shadow: 
+                    0 10px 25px -5px color-mix(in srgb, currentColor 20%, transparent),
+                    0 8px 10px -6px color-mix(in srgb, currentColor 20%, transparent);
+            }
+        }
+
+        /* ==================== ALERT INTERACTIONS ==================== */
+        /* Hover effects */
+        .aq-alert.interactive:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--aqua-shadow-xl);
+        }
+
+        .aq-alert.interactive:active {
+            transform: translateY(0);
+        }
+
+        /* Clickable alert */
+        .aq-alert.clickable {
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-alert.clickable:active {
+            transform: scale(0.98);
+        }
+
+        /* ==================== ALERT POSITIONS ==================== */
+        .aq-alert-container {
+            position: fixed;
+            z-index: var(--aqua-z-50);
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-4);
+            max-width: 400px;
+        }
+
+        .aq-alert-container.top-left {
+            top: var(--aqua-space-6);
+            left: var(--aqua-space-6);
+            align-items: flex-start;
+        }
+
+        .aq-alert-container.top-center {
+            top: var(--aqua-space-6);
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+        }
+
+        .aq-alert-container.top-right {
+            top: var(--aqua-space-6);
+            right: var(--aqua-space-6);
+            align-items: flex-end;
+        }
+
+        .aq-alert-container.bottom-left {
+            bottom: var(--aqua-space-6);
+            left: var(--aqua-space-6);
+            align-items: flex-start;
+        }
+
+        .aq-alert-container.bottom-center {
+            bottom: var(--aqua-space-6);
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+        }
+
+        .aq-alert-container.bottom-right {
+            bottom: var(--aqua-space-6);
+            right: var(--aqua-space-6);
+            align-items: flex-end;
+        }
+
+        /* ==================== ALERT PROGRESS BAR ==================== */
+        .aq-alert.with-progress {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-alert-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: color-mix(in srgb, currentColor 50%, transparent);
+            width: 100%;
+            transform-origin: left;
+            animation: aq-alert-progress 5s linear forwards;
+        }
+
+        @keyframes aq-alert-progress {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(0); }
+        }
+
+        /* ==================== ALERT SPECIAL EFFECTS ==================== */
+        /* Glow effect */
+        .aq-alert.glow {
+            box-shadow: 
+                0 0 20px color-mix(in srgb, currentColor 30%, transparent),
+                var(--aqua-shadow-lg);
+            animation: aq-alert-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes aq-alert-glow {
+            from {
+                box-shadow: 
+                    0 0 20px color-mix(in srgb, currentColor 30%, transparent),
+                    var(--aqua-shadow-lg);
+            }
+            to {
+                box-shadow: 
+                    0 0 30px color-mix(in srgb, currentColor 50%, transparent),
+                    0 0 40px color-mix(in srgb, currentColor 20%, transparent),
+                    var(--aqua-shadow-xl);
+            }
+        }
+
+        /* Neon effect */
+        .aq-alert.neon {
+            background: transparent;
+            border: 2px solid currentColor;
+            color: currentColor;
+            text-shadow: 
+                0 0 5px currentColor,
+                0 0 10px currentColor;
+            box-shadow: 
+                0 0 10px currentColor,
+                inset 0 0 10px color-mix(in srgb, currentColor 20%, transparent);
+            animation: aq-alert-neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes aq-alert-neon {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.8;
+            }
+        }
+
+        /* Floating effect */
+        .aq-alert.floating {
+            animation: aq-alert-float 3s ease-in-out infinite;
+        }
+
+        @keyframes aq-alert-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ==================== ALERT RESPONSIVE DESIGN ==================== */
+        @media (max-width: 640px) {
+            .aq-alert-container {
+                max-width: 90%;
+                left: 5%;
+                right: 5%;
+                transform: none;
+            }
+
+            .aq-alert-container.top-left,
+            .aq-alert-container.top-right,
+            .aq-alert-container.bottom-left,
+            .aq-alert-container.bottom-right {
+                left: 5%;
+                right: 5%;
+                align-items: stretch;
+            }
+
+            .aq-alert {
+                padding: var(--aqua-space-4) var(--aqua-space-5);
+            }
+
+            .aq-alert.xl {
+                padding: var(--aqua-space-5) var(--aqua-space-6);
+                font-size: var(--aqua-text-base);
+            }
+        }
+
+        /* ==================== ALERT GROUPING ==================== */
+        .aq-alert-stack {
+            display: flex;
+            flex-direction: column;
+            gap: var(--aqua-space-3);
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--aqua-border-primary) transparent;
+        }
+
+        .aq-alert-stack::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .aq-alert-stack::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .aq-alert-stack::-webkit-scrollbar-thumb {
+            background: var(--aqua-border-primary);
+            border-radius: var(--aqua-radius-full);
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-alert.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+
+            .aq-alert {
+                box-shadow: var(--aqua-shadow-md);
+            }
+
+            .aq-alert.solid {
+                box-shadow: var(--aqua-shadow-lg);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-alert,
+            .aq-alert-icon,
+            .aq-alert-close {
+                animation: none;
+                transition: none;
+            }
+
+            .aq-alert {
+                animation: aq-alert-fade 0.6s ease;
+            }
+
+            .aq-alert.interactive:hover {
+                transform: none;
+            }
+        }
+
+                                            alert.addEventListener('click', function() {
+                    
