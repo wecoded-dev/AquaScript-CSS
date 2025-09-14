@@ -1,0 +1,515 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED TABLES SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== TABLE BASE STYLES ==================== */
+        .aq-table {
+            /* Layout */
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            
+            /* Typography */
+            font-size: var(--aqua-text-sm);
+            line-height: var(--aqua-leading-relaxed);
+            
+            /* Borders & Effects */
+            border-radius: var(--aqua-radius-xl);
+            background: var(--aqua-bg-primary);
+            box-shadow: var(--aqua-shadow-md);
+            overflow: hidden;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+            
+            /* Performance */
+            will-change: transform, box-shadow;
+        }
+
+        .aq-table:hover {
+            box-shadow: var(--aqua-shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== TABLE HEADER STYLES ==================== */
+        .aq-table-header {
+            background: linear-gradient(135deg, var(--aqua-primary-500), var(--aqua-primary-600));
+        }
+
+        .aq-table th {
+            padding: var(--aqua-space-4) var(--aqua-space-4);
+            text-align: left;
+            font-weight: var(--aqua-font-semibold);
+            color: var(--aqua-text-inverse);
+            position: relative;
+            border-bottom: 2px solid var(--aqua-primary-400);
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-table th:hover {
+            background: linear-gradient(135deg, var(--aqua-primary-600), var(--aqua-primary-700));
+        }
+
+        .aq-table th::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--aqua-primary-200);
+            transition: width var(--aqua-duration-300) ease;
+        }
+
+        .aq-table th:hover::after {
+            width: 100%;
+        }
+
+        /* ==================== TABLE BODY STYLES ==================== */
+        .aq-table td {
+            padding: var(--aqua-space-4) var(--aqua-space-4);
+            border-bottom: 1px solid var(--aqua-border-primary);
+            transition: all var(--aqua-duration-200) ease;
+            position: relative;
+        }
+
+        .aq-table tbody tr {
+            transition: all var(--aqua-duration-200) ease;
+            position: relative;
+        }
+
+        .aq-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .aq-table tbody tr:hover {
+            background: color-mix(in srgb, var(--aqua-primary-50) 20%, transparent);
+            transform: translateX(4px);
+        }
+
+        .aq-table tbody tr:hover td {
+            border-color: var(--aqua-primary-200);
+        }
+
+        .aq-table tbody tr:hover td::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--aqua-primary-500);
+            border-radius: 0 var(--aqua-radius) var(--aqua-radius) 0;
+        }
+
+        /* ==================== TABLE FOOTER STYLES ==================== */
+        .aq-table tfoot {
+            background: var(--aqua-bg-secondary);
+        }
+
+        .aq-table tfoot td {
+            font-weight: var(--aqua-font-semibold);
+            border-top: 2px solid var(--aqua-border-primary);
+            border-bottom: none;
+        }
+
+        /* ==================== TABLE VARIANTS ==================== */
+        /* Striped table */
+        .aq-table.striped tbody tr:nth-child(even) {
+            background: color-mix(in srgb, var(--aqua-bg-secondary) 50%, transparent);
+        }
+
+        .aq-table.striped tbody tr:nth-child(even):hover {
+            background: color-mix(in srgb, var(--aqua-primary-50) 30%, transparent);
+        }
+
+        /* Bordered table */
+        .aq-table.bordered td,
+        .aq-table.bordered th {
+            border: 1px solid var(--aqua-border-primary);
+        }
+
+        .aq-table.bordered {
+            border: 1px solid var(--aqua-border-primary);
+        }
+
+        /* Hover table */
+        .aq-table.hover tbody tr {
+            cursor: pointer;
+        }
+
+        .aq-table.hover tbody tr:active {
+            transform: scale(0.99);
+            background: color-mix(in srgb, var(--aqua-primary-100) 40%, transparent);
+        }
+
+        /* Glass table */
+        .aq-table.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 85%, transparent);
+            backdrop-filter: blur(20px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+        }
+
+        .aq-table.glass th {
+            background: color-mix(in srgb, var(--aqua-primary-500) 70%, transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        /* ==================== TABLE SIZES ==================== */
+        .aq-table.sm td,
+        .aq-table.sm th {
+            padding: var(--aqua-space-2) var(--aqua-space-3);
+            font-size: var(--aqua-text-xs);
+        }
+
+        .aq-table.md td,
+        .aq-table.md th {
+            padding: var(--aqua-space-3) var(--aqua-space-4);
+            font-size: var(--aqua-text-sm);
+        }
+
+        .aq-table.lg td,
+        .aq-table.lg th {
+            padding: var(--aqua-space-5) var(--aqua-space-6);
+            font-size: var(--aqua-text-base);
+        }
+
+        /* ==================== TABLE ANIMATIONS ==================== */
+        /* Row entrance animation */
+        @keyframes aq-table-row-entrance {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .aq-table.animate-rows tbody tr {
+            animation: aq-table-row-entrance 0.6s ease forwards;
+        }
+
+        .aq-table.animate-rows tbody tr:nth-child(1) { animation-delay: 0.1s; }
+        .aq-table.animate-rows tbody tr:nth-child(2) { animation-delay: 0.2s; }
+        .aq-table.animate-rows tbody tr:nth-child(3) { animation-delay: 0.3s; }
+        .aq-table.animate-rows tbody tr:nth-child(4) { animation-delay: 0.4s; }
+        .aq-table.animate-rows tbody tr:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Loading animation */
+        .aq-table.loading tbody tr {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aq-table.loading tbody tr::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                color-mix(in srgb, var(--aqua-primary-100) 30%, transparent) 50%,
+                transparent 100%);
+            animation: aq-table-loading 1.5s infinite;
+        }
+
+        @keyframes aq-table-loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* ==================== TABLE INTERACTIONS ==================== */
+        /* Sortable columns */
+        .aq-table th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .aq-table th.sortable:hover {
+            background: linear-gradient(135deg, var(--aqua-primary-600), var(--aqua-primary-700));
+        }
+
+        .aq-table th.sortable::before {
+            content: '↕';
+            display: inline-block;
+            margin-right: var(--aqua-space-2);
+            opacity: 0.5;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-table th.sortable.asc::before {
+            content: '↑';
+            opacity: 1;
+            color: var(--aqua-primary-200);
+        }
+
+        .aq-table th.sortable.desc::before {
+            content: '↓';
+            opacity: 1;
+            color: var(--aqua-primary-200);
+        }
+
+        /* Expandable rows */
+        .aq-table tr.expandable {
+            cursor: pointer;
+        }
+
+        .aq-table tr.expandable-content {
+            display: none;
+            background: var(--aqua-bg-secondary);
+        }
+
+        .aq-table tr.expandable-content.show {
+            display: table-row;
+            animation: aq-table-expand 0.3s ease;
+        }
+
+        @keyframes aq-table-expand {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+
+        /* ==================== TABLE RESPONSIVE DESIGN ==================== */
+        .aq-table-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--aqua-radius-xl);
+            box-shadow: var(--aqua-shadow-md);
+            margin-bottom: var(--aqua-space-6);
+        }
+
+        .aq-table-responsive {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--aqua-border-primary) transparent;
+        }
+
+        .aq-table-responsive::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .aq-table-responsive::-webkit-scrollbar-track {
+            background: transparent;
+            margin: var(--aqua-space-4);
+        }
+
+        .aq-table-responsive::-webkit-scrollbar-thumb {
+            background: var(--aqua-border-primary);
+            border-radius: var(--aqua-radius-full);
+        }
+
+        .aq-table-responsive::-webkit-scrollbar-thumb:hover {
+            background: var(--aqua-primary-300);
+        }
+
+        /* Stacked table for mobile */
+        @media (max-width: 768px) {
+            .aq-table.stacked {
+                display: block;
+            }
+
+            .aq-table.stacked thead {
+                display: none;
+            }
+
+            .aq-table.stacked tbody,
+            .aq-table.stacked tr,
+            .aq-table.stacked td {
+                display: block;
+                width: 100%;
+            }
+
+            .aq-table.stacked tr {
+                margin-bottom: var(--aqua-space-4);
+                border: 1px solid var(--aqua-border-primary);
+                border-radius: var(--aqua-radius-lg);
+                padding: var(--aqua-space-4);
+                background: var(--aqua-bg-primary);
+                box-shadow: var(--aqua-shadow-sm);
+            }
+
+            .aq-table.stacked td {
+                padding: var(--aqua-space-2) var(--aqua-space-3);
+                border: none;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            .aq-table.stacked td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: var(--aqua-space-3);
+                top: var(--aqua-space-2);
+                width: 45%;
+                font-weight: var(--aqua-font-semibold);
+                color: var(--aqua-text-heading);
+            }
+        }
+
+        /* ==================== TABLE PAGINATION ==================== */
+        .aq-table-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--aqua-space-4);
+            background: var(--aqua-bg-secondary);
+            border-top: 1px solid var(--aqua-border-primary);
+        }
+
+        .aq-table-pagination-info {
+            font-size: var(--aqua-text-sm);
+            color: var(--aqua-text-secondary);
+        }
+
+        .aq-table-pagination-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-2);
+        }
+
+        .aq-table-pagination-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid var(--aqua-border-primary);
+            background: var(--aqua-bg-primary);
+            border-radius: var(--aqua-radius);
+            cursor: pointer;
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-table-pagination-btn:hover {
+            background: var(--aqua-primary-500);
+            color: var(--aqua-text-inverse);
+            border-color: var(--aqua-primary-500);
+            transform: translateY(-1px);
+        }
+
+        .aq-table-pagination-btn.active {
+            background: var(--aqua-primary-500);
+            color: var(--aqua-text-inverse);
+            border-color: var(--aqua-primary-500);
+        }
+
+        .aq-table-pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ==================== TABLE TOOLBAR ==================== */
+        .aq-table-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--aqua-space-4);
+            background: var(--aqua-bg-secondary);
+            border-bottom: 1px solid var(--aqua-border-primary);
+        }
+
+        .aq-table-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--aqua-space-2);
+        }
+
+        .aq-table-search {
+            position: relative;
+        }
+
+        .aq-table-search input {
+            padding-left: var(--aqua-space-10);
+            min-width: 250px;
+        }
+
+        .aq-table-search-icon {
+            position: absolute;
+            left: var(--aqua-space-3);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--aqua-text-tertiary);
+        }
+
+        /* ==================== TABLE SPECIAL EFFECTS ==================== */
+        /* Highlight important cells */
+        .aq-table td.highlight {
+            background: color-mix(in srgb, var(--aqua-warning) 20%, transparent);
+            font-weight: var(--aqua-font-semibold);
+            color: var(--aqua-warning);
+            animation: aq-table-pulse 2s infinite;
+        }
+
+        @keyframes aq-table-pulse {
+            0%, 100% { background-color: color-mix(in srgb, var(--aqua-warning) 20%, transparent); }
+            50% { background-color: color-mix(in srgb, var(--aqua-warning) 30%, transparent); }
+        }
+
+        /* Success cells */
+        .aq-table td.success {
+            background: color-mix(in srgb, var(--aqua-success) 15%, transparent);
+            color: var(--aqua-success);
+            font-weight: var(--aqua-font-semibold);
+        }
+
+        /* Error cells */
+        .aq-table td.error {
+            background: color-mix(in srgb, var(--aqua-danger) 15%, transparent);
+            color: var(--aqua-danger);
+            font-weight: var(--aqua-font-semibold);
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-table.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+
+            .aq-table.glass th {
+                background: color-mix(in srgb, var(--aqua-primary-600) 80%, transparent);
+            }
+
+            .aq-table tbody tr:hover {
+                background: color-mix(in srgb, var(--aqua-primary-900) 30%, transparent);
+            }
+
+            .aq-table.striped tbody tr:nth-child(even) {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 95%, transparent);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-table,
+            .aq-table th,
+            .aq-table td,
+            .aq-table tr,
+            .aq-table-pagination-btn {
+                transition: none;
+                animation: none;
+            }
+
+            .aq-table:hover {
+                transform: none;
+            }
+
+            .aq-table tbody tr:hover {
+                transform: none;
+            }
+        }
+
+        
