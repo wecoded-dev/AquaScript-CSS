@@ -1,0 +1,424 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED FLEXBOX SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== FLEXBOX BASE STYLES ==================== */
+        .aq-flex {
+            /* Layout */
+            display: flex;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+            
+            /* Performance */
+            will-change: flex-direction, align-items, justify-content;
+            position: relative;
+        }
+
+        /* ==================== FLEXBOX DIRECTIONS ==================== */
+        .aq-flex.row { flex-direction: row; }
+        .aq-flex.row-reverse { flex-direction: row-reverse; }
+        .aq-flex.col { flex-direction: column; }
+        .aq-flex.col-reverse { flex-direction: column-reverse; }
+
+        /* ==================== FLEXBOX WRAPPING ==================== */
+        .aq-flex.wrap { flex-wrap: wrap; }
+        .aq-flex.wrap-reverse { flex-wrap: wrap-reverse; }
+        .aq-flex.nowrap { flex-wrap: nowrap; }
+
+        /* ==================== FLEXBOX JUSTIFY CONTENT ==================== */
+        .aq-flex.justify-start { justify-content: flex-start; }
+        .aq-flex.justify-end { justify-content: flex-end; }
+        .aq-flex.justify-center { justify-content: center; }
+        .aq-flex.justify-between { justify-content: space-between; }
+        .aq-flex.justify-around { justify-content: space-around; }
+        .aq-flex.justify-evenly { justify-content: space-evenly; }
+        .aq-flex.justify-stretch { justify-content: stretch; }
+
+        /* ==================== FLEXBOX ALIGN ITEMS ==================== */
+        .aq-flex.items-start { align-items: flex-start; }
+        .aq-flex.items-end { align-items: flex-end; }
+        .aq-flex.items-center { align-items: center; }
+        .aq-flex.items-baseline { align-items: baseline; }
+        .aq-flex.items-stretch { align-items: stretch; }
+
+        /* ==================== FLEXBOX ALIGN CONTENT ==================== */
+        .aq-flex.content-start { align-content: flex-start; }
+        .aq-flex.content-end { align-content: flex-end; }
+        .aq-flex.content-center { align-content: center; }
+        .aq-flex.content-between { align-content: space-between; }
+        .aq-flex.content-around { align-content: space-around; }
+        .aq-flex.content-stretch { align-content: stretch; }
+
+        /* ==================== FLEXBOX GAP SYSTEM ==================== */
+        .aq-flex.gap-0 { gap: 0; }
+        .aq-flex.gap-1 { gap: var(--aqua-space-1); }
+        .aq-flex.gap-2 { gap: var(--aqua-space-2); }
+        .aq-flex.gap-3 { gap: var(--aqua-space-3); }
+        .aq-flex.gap-4 { gap: var(--aqua-space-4); }
+        .aq-flex.gap-5 { gap: var(--aqua-space-5); }
+        .aq-flex.gap-6 { gap: var(--aqua-space-6); }
+        .aq-flex.gap-8 { gap: var(--aqua-space-8); }
+        .aq-flex.gap-10 { gap: var(--aqua-space-10); }
+        .aq-flex.gap-12 { gap: var(--aqua-space-12); }
+        .aq-flex.gap-16 { gap: var(--aqua-space-16); }
+
+        /* Column and row specific gaps */
+        .aq-flex.col-gap-0 { column-gap: 0; }
+        .aq-flex.col-gap-1 { column-gap: var(--aqua-space-1); }
+        .aq-flex.col-gap-2 { column-gap: var(--aqua-space-2); }
+        .aq-flex.col-gap-3 { column-gap: var(--aqua-space-3); }
+        .aq-flex.col-gap-4 { column-gap: var(--aqua-space-4); }
+        .aq-flex.col-gap-5 { column-gap: var(--aqua-space-5); }
+        .aq-flex.col-gap-6 { column-gap: var(--aqua-space-6); }
+
+        .aq-flex.row-gap-0 { row-gap: 0; }
+        .aq-flex.row-gap-1 { row-gap: var(--aqua-space-1); }
+        .aq-flex.row-gap-2 { row-gap: var(--aqua-space-2); }
+        .aq-flex.row-gap-3 { row-gap: var(--aqua-space-3); }
+        .aq-flex.row-gap-4 { row-gap: var(--aqua-space-4); }
+        .aq-flex.row-gap-5 { row-gap: var(--aqua-space-5); }
+        .aq-flex.row-gap-6 { row-gap: var(--aqua-space-6); }
+
+        /* ==================== FLEXBOX ITEMS ==================== */
+        .aq-flex-item {
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+            
+            /* Performance */
+            will-change: flex, order, align-self;
+            position: relative;
+        }
+
+        /* Flex grow/shrink */
+        .aq-flex-item.grow { flex-grow: 1; }
+        .aq-flex-item.grow-0 { flex-grow: 0; }
+        .aq-flex-item.shrink { flex-shrink: 1; }
+        .aq-flex-item.shrink-0 { flex-shrink: 0; }
+
+        /* Flex basis */
+        .aq-flex-item.basis-auto { flex-basis: auto; }
+        .aq-flex-item.basis-0 { flex-basis: 0; }
+        .aq-flex-item.basis-1 { flex-basis: 8.333333%; }
+        .aq-flex-item.basis-2 { flex-basis: 16.666667%; }
+        .aq-flex-item.basis-3 { flex-basis: 25%; }
+        .aq-flex-item.basis-4 { flex-basis: 33.333333%; }
+        .aq-flex-item.basis-5 { flex-basis: 41.666667%; }
+        .aq-flex-item.basis-6 { flex-basis: 50%; }
+        .aq-flex-item.basis-7 { flex-basis: 58.333333%; }
+        .aq-flex-item.basis-8 { flex-basis: 66.666667%; }
+        .aq-flex-item.basis-9 { flex-basis: 75%; }
+        .aq-flex-item.basis-10 { flex-basis: 83.333333%; }
+        .aq-flex-item.basis-11 { flex-basis: 91.666667%; }
+        .aq-flex-item.basis-12 { flex-basis: 100%; }
+        .aq-flex-item.basis-full { flex-basis: 100%; }
+
+        /* Flex shorthand */
+        .aq-flex-item.flex-1 { flex: 1 1 0%; }
+        .aq-flex-item.flex-auto { flex: 1 1 auto; }
+        .aq-flex-item.flex-initial { flex: 0 1 auto; }
+        .aq-flex-item.flex-none { flex: none; }
+
+        /* Align self */
+        .aq-flex-item.self-auto { align-self: auto; }
+        .aq-flex-item.self-start { align-self: flex-start; }
+        .aq-flex-item.self-end { align-self: flex-end; }
+        .aq-flex-item.self-center { align-self: center; }
+        .aq-flex-item.self-stretch { align-self: stretch; }
+        .aq-flex-item.self-baseline { align-self: baseline; }
+
+        /* Order */
+        .aq-flex-item.order-first { order: -9999; }
+        .aq-flex-item.order-last { order: 9999; }
+        .aq-flex-item.order-none { order: 0; }
+        .aq-flex-item.order-1 { order: 1; }
+        .aq-flex-item.order-2 { order: 2; }
+        .aq-flex-item.order-3 { order: 3; }
+        .aq-flex-item.order-4 { order: 4; }
+        .aq-flex-item.order-5 { order: 5; }
+        .aq-flex-item.order-6 { order: 6; }
+        .aq-flex-item.order-7 { order: 7; }
+        .aq-flex-item.order-8 { order: 8; }
+        .aq-flex-item.order-9 { order: 9; }
+        .aq-flex-item.order-10 { order: 10; }
+        .aq-flex-item.order-11 { order: 11; }
+        .aq-flex-item.order-12 { order: 12; }
+
+        /* ==================== FLEXBOX ANIMATIONS ==================== */
+        /* Staggered entrance animation */
+        .aq-flex.animate-stagger .aq-flex-item {
+            animation: aq-flex-item-entrance 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes aq-flex-item-entrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .aq-flex.animate-stagger .aq-flex-item:nth-child(1) { animation-delay: 0.1s; }
+        .aq-flex.animate-stagger .aq-flex-item:nth-child(2) { animation-delay: 0.2s; }
+        .aq-flex.animate-stagger .aq-flex-item:nth-child(3) { animation-delay: 0.3s; }
+        .aq-flex.animate-stagger .aq-flex-item:nth-child(4) { animation-delay: 0.4s; }
+        .aq-flex.animate-stagger .aq-flex-item:nth-child(5) { animation-delay: 0.5s; }
+        .aq-flex.animate-stagger .aq-flex-item:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Hover animations */
+        .aq-flex.animate-hover .aq-flex-item {
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        .aq-flex.animate-hover .aq-flex-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            z-index: 10;
+            box-shadow: var(--aqua-shadow-xl);
+        }
+
+        /* Flex grow animation */
+        .aq-flex-item.animate-grow {
+            animation: aq-flex-grow 0.8s ease forwards;
+        }
+
+        @keyframes aq-flex-grow {
+            from { flex-grow: 0; }
+            to { flex-grow: 1; }
+        }
+
+        /* Flex shuffle animation */
+        .aq-flex.animate-shuffle .aq-flex-item {
+            animation: aq-flex-shuffle 0.6s ease forwards;
+        }
+
+        @keyframes aq-flex-shuffle {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* ==================== FLEXBOX LAYOUTS ==================== */
+        /* Card layout */
+        .aq-flex.card-layout {
+            flex-wrap: wrap;
+            gap: var(--aqua-space-6);
+        }
+
+        .aq-flex.card-layout .aq-flex-item {
+            flex: 1 1 300px;
+            min-width: 0;
+            background: var(--aqua-bg-primary);
+            border-radius: var(--aqua-radius-xl);
+            border: 1px solid var(--aqua-border-primary);
+            padding: var(--aqua-space-6);
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        .aq-flex.card-layout .aq-flex-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--aqua-shadow-lg);
+        }
+
+        /* Navigation layout */
+        .aq-flex.nav-layout {
+            align-items: center;
+            gap: var(--aqua-space-4);
+        }
+
+        .aq-flex.nav-layout .aq-flex-item {
+            padding: var(--aqua-space-3) var(--aqua-space-4);
+            border-radius: var(--aqua-radius-lg);
+            transition: all var(--aqua-duration-200) ease;
+        }
+
+        .aq-flex.nav-layout .aq-flex-item:hover {
+            background: var(--aqua-primary-50);
+            color: var(--aqua-primary-700);
+        }
+
+        /* Sidebar layout */
+        .aq-flex.sidebar-layout {
+            height: 100vh;
+        }
+
+        .aq-flex.sidebar-layout .aq-flex-item.sidebar {
+            flex: 0 0 300px;
+            background: var(--aqua-bg-secondary);
+            border-right: 1px solid var(--aqua-border-primary);
+        }
+
+        .aq-flex.sidebar-layout .aq-flex-item.content {
+            flex: 1 1 auto;
+            padding: var(--aqua-space-6);
+        }
+
+        /* ==================== FLEXBOX SPECIAL EFFECTS ==================== */
+        /* Glass flex items */
+        .aq-flex-item.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 85%, transparent);
+            backdrop-filter: blur(20px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+            border-radius: var(--aqua-radius-xl);
+        }
+
+        /* Hover effects */
+        .aq-flex-item.hover-lift {
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        .aq-flex-item.hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--aqua-shadow-2xl);
+            z-index: 20;
+        }
+
+        .aq-flex-item.hover-glow:hover {
+            box-shadow: 
+                0 0 20px color-mix(in srgb, var(--aqua-primary-500) 30%, transparent),
+                var(--aqua-shadow-lg);
+        }
+
+        /* Gradient overlay */
+        .aq-flex-item.gradient-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                transparent 0%,
+                color-mix(in srgb, var(--aqua-primary-500) 10%, transparent) 100%);
+            opacity: 0;
+            transition: opacity var(--aqua-duration-300) ease;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        .aq-flex-item.gradient-overlay:hover::before {
+            opacity: 1;
+        }
+
+        /* ==================== FLEXBOX INTERACTIONS ==================== */
+        /* Draggable flex items */
+        .aq-flex.draggable .aq-flex-item {
+            cursor: grab;
+            transition: transform var(--aqua-duration-200) ease;
+        }
+
+        .aq-flex.draggable .aq-flex-item:active {
+            cursor: grabbing;
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: var(--aqua-shadow-2xl);
+            z-index: 30;
+        }
+
+        /* Sortable flex container */
+        .aq-flex.sortable {
+            transition: all var(--aqua-duration-500) ease;
+        }
+
+        .aq-flex.sortable .aq-flex-item {
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        .aq-flex.sortable .aq-flex-item.moving {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+
+        /* ==================== FLEXBOX RESPONSIVE DESIGN ==================== */
+        /* Responsive direction */
+        @media (max-width: 1024px) {
+            .aq-flex.lg\:row { flex-direction: row; }
+            .aq-flex.lg\:col { flex-direction: column; }
+            .aq-flex.lg\:wrap { flex-wrap: wrap; }
+        }
+
+        @media (max-width: 768px) {
+            .aq-flex.md\:row { flex-direction: row; }
+            .aq-flex.md\:col { flex-direction: column; }
+            .aq-flex.md\:wrap { flex-wrap: wrap; }
+        }
+
+        @media (max-width: 640px) {
+            .aq-flex.sm\:row { flex-direction: row; }
+            .aq-flex.sm\:col { flex-direction: column; }
+            .aq-flex.sm\:wrap { flex-wrap: wrap; }
+        }
+
+        /* Responsive gap */
+        @media (max-width: 768px) {
+            .aq-flex.gap-6 { gap: var(--aqua-space-4); }
+            .aq-flex.gap-8 { gap: var(--aqua-space-5); }
+            .aq-flex.gap-10 { gap: var(--aqua-space-6); }
+        }
+
+        /* Responsive flex basis */
+        @media (max-width: 1024px) {
+            .aq-flex-item.lg\:basis-full { flex-basis: 100% !important; }
+            .aq-flex-item.lg\:basis-1\/2 { flex-basis: 50% !important; }
+        }
+
+        @media (max-width: 768px) {
+            .aq-flex-item.md\:basis-full { flex-basis: 100% !important; }
+            .aq-flex-item.md\:basis-1\/2 { flex-basis: 50% !important; }
+        }
+
+        @media (max-width: 640px) {
+            .aq-flex-item.sm\:basis-full { flex-basis: 100% !important; }
+        }
+
+        /* ==================== FLEXBOX ACCESSIBILITY ==================== */
+        .aq-flex:focus-within {
+            outline: 2px solid var(--aqua-primary-500);
+            outline-offset: 2px;
+            border-radius: var(--aqua-radius);
+        }
+
+        .aq-flex-item:focus {
+            outline: 2px solid var(--aqua-primary-500);
+            outline-offset: 2px;
+            z-index: 40;
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-flex-item.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+
+            .aq-flex.card-layout .aq-flex-item {
+                background: var(--aqua-bg-secondary);
+            }
+
+            .aq-flex.nav-layout .aq-flex-item:hover {
+                background: var(--aqua-primary-900);
+                color: var(--aqua-primary-100);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-flex,
+            .aq-flex-item {
+                animation: none;
+                transition: none;
+            }
+
+            .aq-flex.animate-stagger .aq-flex-item,
+            .aq-flex.animate-hover .aq-flex-item {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .aq-flex-item:hover {
+                transform: none;
+            }
+        }
+
+                    
+                    
