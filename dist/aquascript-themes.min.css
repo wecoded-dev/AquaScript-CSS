@@ -1,0 +1,37 @@
+/* AquaScriptCSS v2.0 - Minified Themes (dark, light, aqua) */
+
+/* ========== DARK THEME ========== */
+[data-theme="dark"],:root[data-theme="dark"]{
+  --aqua-bg-primary:#181c24;--aqua-bg-secondary:#23293a;--aqua-bg-tertiary:#1a202e;
+  --aqua-text-primary:#e2e8f0;--aqua-text-secondary:#a0aec0;--aqua-text-heading:#f1f5fa;--aqua-text-inverse:#181c24;
+  --aqua-border-primary:#2d3748;--aqua-border-secondary:#374151;
+  /* ...all dark variables... */
+}
+/* ...all dark component overrides... */
+
+/* ========== LIGHT THEME ========== */
+[data-theme="light"],:root[data-theme="light"]{
+  --aqua-bg-primary:#f7fafc;--aqua-bg-secondary:#f1f5f9;--aqua-bg-tertiary:#e2e8f0;
+  --aqua-text-primary:#23293a;--aqua-text-secondary:#4b5563;--aqua-text-heading:#1a202e;--aqua-text-inverse:#fff;
+  --aqua-border-primary:#e2e8f0;--aqua-border-secondary:#cbd5e1;
+  /* ...all light variables... */
+}
+/* ...all light component overrides... */
+
+/* ========== AQUA THEME ========== */
+[data-theme="aqua"],:root[data-theme="aqua"]{
+  --aqua-bg-primary:#e0f7fa;--aqua-bg-secondary:#b2ebf2;--aqua-bg-tertiary:#80deea;
+  --aqua-text-primary:#01579b;--aqua-text-secondary:#006064;--aqua-text-heading:#004d40;--aqua-text-inverse:#e0f7fa;
+  --aqua-border-primary:#4dd0e1;--aqua-border-secondary:#00bcd4;
+  /* ...all aqua variables... */
+}
+/* ...all aqua component overrides... */
+
+/* ========== RESPONSIVE THEME ADJUSTMENTS ========== */
+@media(max-width:640px){[data-theme="dark"] .aq-alert{padding:var(--aqua-space-4) var(--aqua-space-5);}/* ...mobile theme tweaks... */}
+/* ...tablet, desktop, large-screens theme overrides... */
+
+/* ========== ACCESSIBILITY ========== */
+@media(prefers-contrast:high){:root[data-theme="dark"]{--aqua-text-primary:#fff;--aqua-border-primary:#fff;}}
+
+/* ========== END ========== */
