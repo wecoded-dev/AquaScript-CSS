@@ -1,0 +1,54 @@
+/* =======================================================================
+   AquaScriptCSS Desktop Responsive Overrides
+   Applies to screens 969px–1440px
+   ======================================================================= */
+
+/* Alerts */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-alert { padding: var(--aqua-space-5) var(--aqua-space-7); font-size: var(--aqua-text-lg); }
+  .aq-alert-container { max-width: 400px; }
+}
+
+/* Badges */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-badge { font-size: var(--aqua-text-base); padding: 0.375rem 0.75rem; }
+  .aq-badge-group { gap: var(--aqua-space-3); }
+}
+
+/* Buttons */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-btn { font-size: var(--aqua-text-lg); padding: 0.75rem 1.5rem; }
+  .aq-btn-group { gap: var(--aqua-space-3); }
+}
+
+/* Cards */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-card { max-width: 500px; font-size: var(--aqua-text-lg); }
+  .aq-card-header, .aq-card-body, .aq-card-footer { padding: var(--aqua-space-6) !important; }
+  .aq-card-img { height: 200px; }
+  .aq-card-group, .aq-card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Forms */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-form, .aq-form-section { width: 80vw; padding: var(--aqua-space-6); gap: var(--aqua-space-6); }
+  .aq-form-control { font-size: var(--aqua-text-lg); padding: var(--aqua-space-4) var(--aqua-space-5); }
+}
+
+/* Modals */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-modal-dialog, .aq-modal-lg .aq-modal-dialog, .aq-modal-xl .aq-modal-dialog {
+    max-width: 700px; margin: var(--aqua-space-4); padding: var(--aqua-space-6);
+  }
+  .aq-modal-header, .aq-modal-body, .aq-modal-footer { padding-left: var(--aqua-space-6); padding-right: var(--aqua-space-6); }
+  .aq-modal-footer { gap: var(--aqua-space-3); }
+}
+
+/* Navbar */
+@media (min-width: 969px) and (max-width: 1440px) {
+  .aq-navbar { min-height: 4rem; }
+  .aq-navbar-container { padding: 0 var(--aqua-space-6); }
+  .aq-navbar-nav, .aq-navbar-actions { gap: var(--aqua-space-3); }
+  .aq-navbar-link { font-size: var(--aqua-text-lg); }
+  .aq-navbar-toggle { display: none; }
+}
