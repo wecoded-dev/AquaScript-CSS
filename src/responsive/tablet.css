@@ -1,0 +1,54 @@
+/* =======================================================================
+   AquaScriptCSS Tablet Responsive Overrides
+   Applies to screens 641px–968px
+   ======================================================================= */
+
+/* Alerts */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-alert { padding: var(--aqua-space-5) var(--aqua-space-6); font-size: var(--aqua-text-base); }
+  .aq-alert-title { font-size: var(--aqua-text-lg); }
+  .aq-alert-container { max-width: 80vw; left: 10vw; right: 10vw; }
+}
+
+/* Badges */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-badge { font-size: var(--aqua-text-sm); padding: 0.25rem 0.625rem; }
+  .aq-badge-group { gap: var(--aqua-space-2); }
+}
+
+/* Buttons */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-btn { font-size: var(--aqua-text-base); width: 80%; padding: 0.625rem 1.25rem; }
+  .aq-btn-group { gap: var(--aqua-space-2); }
+}
+
+/* Cards */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-card { max-width: 90vw; font-size: var(--aqua-text-base); }
+  .aq-card-header, .aq-card-body, .aq-card-footer { padding: var(--aqua-space-5) !important; }
+  .aq-card-img { height: 160px; }
+  .aq-card-group, .aq-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Forms */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-form, .aq-form-section { width: 95vw; padding: var(--aqua-space-4); gap: var(--aqua-space-4); }
+  .aq-form-control { font-size: var(--aqua-text-base); padding: var(--aqua-space-3) var(--aqua-space-4); }
+}
+
+/* Modals */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-modal-dialog, .aq-modal-sm .aq-modal-dialog, .aq-modal-md .aq-modal-dialog {
+    max-width: 90vw; margin: var(--aqua-space-2); padding: var(--aqua-space-4);
+  }
+  .aq-modal-header, .aq-modal-body, .aq-modal-footer { padding-left: var(--aqua-space-4); padding-right: var(--aqua-space-4); }
+}
+
+/* Navbar */
+@media (min-width: 641px) and (max-width: 968px) {
+  .aq-navbar { min-height: 3.5rem; }
+  .aq-navbar-container { padding: 0 var(--aqua-space-4); }
+  .aq-navbar-nav, .aq-navbar-actions { gap: var(--aqua-space-2); }
+  .aq-navbar-link { font-size: var(--aqua-text-base); }
+  .aq-navbar-toggle { display: flex; }
+}
