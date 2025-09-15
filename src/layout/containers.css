@@ -1,0 +1,306 @@
+/*==============================================================================
+AQUASCRIPTCSS ULTRA ADVANCED CONTAINERS SYSTEM v1.0
+==============================================================================*/
+
+/*==================== BASE CONTAINER ====================*/
+.aq-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: var(--aqua-container-2xl, 1280px);
+    margin: 0 auto;
+    padding: var(--aqua-space-8) var(--aqua-space-6);
+    box-sizing: border-box;
+    border-radius: var(--aqua-radius-2xl);
+    background: var(--aqua-bg-primary);
+    box-shadow: var(--aqua-shadow-xl);
+    position: relative;
+    transition: all var(--aqua-duration-400) var(--aqua-transition-ease-out);
+    will-change: box-shadow, background, transform;
+    isolation: isolate;
+    overflow: hidden;
+    animation: aq-container-float-in 0.8s cubic-bezier(.2,.8,.4,1) both;
+}
+
+/*==================== GLASS CONTAINER ====================*/
+.aq-container.glass {
+    background: color-mix(in srgb, var(--aqua-bg-primary) 82%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1.5px solid color-mix(in srgb, var(--aqua-border-primary) 28%, transparent);
+    box-shadow: 0 8px 32px 0 color-mix(in srgb, var(--aqua-primary-400) 13%, transparent);
+    animation: aq-container-glass-blur 1.2s cubic-bezier(.2,.8,.4,1) both;
+}
+
+/*==================== GRADIENT CONTAINER ====================*/
+.aq-container.gradient {
+    background: linear-gradient(120deg, var(--aqua-primary-300) 0%, var(--aqua-secondary-300) 100%);
+    box-shadow: 0 12px 30px -10px color-mix(in srgb, var(--aqua-primary-500) 18%, transparent);
+    color: var(--aqua-text-inverse);
+    animation: aq-container-gradient-reveal 1s cubic-bezier(.4,0,.2,1) both;
+}
+
+/*==================== SHADOWED CONTAINER ====================*/
+.aq-container.shadowed {
+    box-shadow: 0 14px 48px 0 color-mix(in srgb, var(--aqua-primary-700) 23%, transparent), var(--aqua-shadow-2xl);
+    animation: aq-container-shadow-pop 0.7s cubic-bezier(.4,.8,.2,1) both;
+}
+
+/*==================== BORDERED CONTAINER ====================*/
+.aq-container.bordered {
+    border: 2.5px solid var(--aqua-primary-300);
+    background: color-mix(in srgb, var(--aqua-bg-primary) 95%, transparent);
+    animation: aq-container-border-flash 0.6s cubic-bezier(.4,.8,.2,1) both;
+}
+
+/*==================== ANIMATED CONTAINER ====================*/
+.aq-container.animated {
+    animation: aq-container-float 2.2s infinite alternate cubic-bezier(.5,1,.5,1);
+    box-shadow: 0 12px 32px -8px color-mix(in srgb, var(--aqua-secondary-500) 16%, transparent);
+}
+
+/*==================== NEON CONTAINER ====================*/
+.aq-container.neon {
+    background: transparent;
+    border: 2px solid var(--aqua-primary-400);
+    box-shadow:
+        0 0 24px var(--aqua-primary-400),
+        0 0 64px color-mix(in srgb, var(--aqua-secondary-500) 12%, transparent);
+    color: var(--aqua-primary-300);
+    text-shadow:
+        0 0 8px var(--aqua-primary-300),
+        0 0 16px var(--aqua-secondary-400);
+    animation: aq-container-neon-glow 1.8s infinite alternate cubic-bezier(.5,1,.5,1);
+}
+
+/*==================== CONTAINER SIZES ====================*/
+.aq-container.sm { max-width: 480px; padding: var(--aqua-space-5) var(--aqua-space-3); }
+.aq-container.md { max-width: 800px; padding: var(--aqua-space-7) var(--aqua-space-5); }
+.aq-container.lg { max-width: 1440px; padding: var(--aqua-space-10) var(--aqua-space-8); }
+.aq-container.full { max-width: 100vw; border-radius: 0; }
+
+/*==================== CONTAINER LAYOUTS ====================*/
+.aq-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--aqua-space-8);
+    align-items: stretch;
+    justify-content: center;
+}
+
+.aq-container.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--aqua-space-6);
+    align-items: stretch;
+    justify-content: center;
+}
+
+/*==================== CONTAINER HEADER ====================*/
+.aq-container-header {
+    display: flex;
+    align-items: center;
+    gap: var(--aqua-space-3);
+    margin-bottom: var(--aqua-space-4);
+    font-size: var(--aqua-text-2xl);
+    font-weight: var(--aqua-font-bold);
+    letter-spacing: 0.01em;
+    color: var(--aqua-text-heading);
+    animation: aq-container-header-pop 1s cubic-bezier(.4,0,.2,1) both;
+}
+
+/*==================== CONTAINER BODY ====================*/
+.aq-container-body {
+    flex: 1 1 auto;
+    padding: var(--aqua-space-4) 0;
+    font-size: var(--aqua-text-lg);
+    color: var(--aqua-text-primary);
+    opacity: 0.95;
+    animation: aq-container-body-fadein 0.9s ease-in both;
+}
+
+/*==================== CONTAINER FOOTER ====================*/
+.aq-container-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--aqua-space-2);
+    margin-top: var(--aqua-space-4);
+    font-size: var(--aqua-text-base);
+    color: var(--aqua-text-tertiary);
+    animation: aq-container-footer-slidein 0.7s cubic-bezier(.4,0,.2,1) both;
+}
+
+/*==================== CONTAINER BADGES ====================*/
+.aq-container-badge {
+    position: absolute;
+    top: var(--aqua-space-2);
+    right: var(--aqua-space-2);
+    background: var(--aqua-secondary-500);
+    color: var(--aqua-text-inverse);
+    padding: var(--aqua-space-1) var(--aqua-space-4);
+    font-size: var(--aqua-text-xs);
+    font-weight: var(--aqua-font-semibold);
+    border-radius: var(--aqua-radius-full);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--aqua-secondary-500) 40%, transparent);
+    animation: aq-container-badge-pop 1.2s cubic-bezier(.4,0,.2,1) both;
+    z-index: 10;
+}
+
+/*==================== CONTAINER ANIMATIONS ====================*/
+@keyframes aq-container-float-in {
+    0% { opacity: 0; transform: translateY(40px) scale(0.90); }
+    80% { opacity: 1; transform: translateY(-6px) scale(1.03);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+@keyframes aq-container-glass-blur {
+    0% { backdrop-filter: blur(0px); opacity: 0.7;}
+    100% { backdrop-filter: blur(24px); opacity: 1;}
+}
+
+@keyframes aq-container-gradient-reveal {
+    0% { background-size: 400% 400%; opacity: 0.5;}
+    100% { background-size: 100% 100%; opacity: 1;}
+}
+
+@keyframes aq-container-shadow-pop {
+    0% { box-shadow: none; }
+    100% { box-shadow: 0 14px 48px 0 color-mix(in srgb, var(--aqua-primary-700) 23%, transparent), var(--aqua-shadow-2xl); }
+}
+
+@keyframes aq-container-border-flash {
+    0% { border-color: var(--aqua-primary-100);}
+    100% { border-color: var(--aqua-primary-300);}
+}
+
+@keyframes aq-container-float {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-12px);}
+    100% { transform: translateY(0);}
+}
+
+@keyframes aq-container-neon-glow {
+    0% { box-shadow: 0 0 16px var(--aqua-primary-400);}
+    100% { box-shadow: 0 0 32px var(--aqua-primary-400), 0 0 64px color-mix(in srgb, var(--aqua-secondary-500) 12%, transparent);}
+}
+
+@keyframes aq-container-header-pop {
+    0% { opacity: 0; transform: translateY(-24px) scale(0.9);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+@keyframes aq-container-body-fadein {
+    0% { opacity: 0; }
+    100% { opacity: 0.95; }
+}
+
+@keyframes aq-container-footer-slidein {
+    0% { opacity: 0; transform: translateY(24px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes aq-container-badge-pop {
+    0% { opacity: 0; transform: scale(0.6);}
+    75% { opacity: 1; transform: scale(1.15);}
+    100% { opacity: 1; transform: scale(1);}
+}
+
+/*==================== INTERACTIVE EFFECTS ====================*/
+.aq-container.interactive:hover {
+    box-shadow: 0 20px 48px 0 color-mix(in srgb, var(--aqua-primary-500) 40%, transparent);
+    transform: scale(1.025) translateY(-4px);
+    transition: all var(--aqua-duration-300) var(--aqua-transition-ease-out);
+}
+
+/*==================== CLICKABLE ====================*/
+.aq-container.clickable {
+    cursor: pointer;
+    transition: box-shadow var(--aqua-duration-200) ease, transform var(--aqua-duration-150) ease;
+}
+.aq-container.clickable:active {
+    box-shadow: 0 6px 16px 0 color-mix(in srgb, var(--aqua-primary-700) 21%, transparent);
+    transform: scale(0.99);
+}
+
+/*==================== RESPONSIVE DESIGN ====================*/
+@media (max-width: 768px) {
+    .aq-container {
+        padding: var(--aqua-space-5) var(--aqua-space-2);
+        border-radius: var(--aqua-radius-xl);
+        max-width: 98vw;
+    }
+    .aq-container-header {
+        font-size: var(--aqua-text-xl);
+    }
+    .aq-container-body {
+        font-size: var(--aqua-text-base);
+    }
+    .aq-container.grid {
+        grid-template-columns: 1fr;
+        gap: var(--aqua-space-4);
+    }
+    .aq-container.flex {
+        flex-direction: column;
+        gap: var(--aqua-space-4);
+    }
+}
+
+/*==================== DARK MODE ====================*/
+@media (prefers-color-scheme: dark) {
+    .aq-container,
+    .aq-container.bordered {
+        background: color-mix(in srgb, var(--aqua-bg-primary) 81%, transparent);
+        border-color: var(--aqua-primary-700);
+        box-shadow: var(--aqua-shadow-lg);
+    }
+    .aq-container.glass {
+        background: color-mix(in srgb, var(--aqua-bg-primary) 75%, transparent);
+        border-color: var(--aqua-primary-600);
+    }
+    .aq-container.gradient {
+        background: linear-gradient(120deg, var(--aqua-primary-800) 0%, var(--aqua-secondary-800) 100%);
+        color: var(--aqua-text-inverse);
+    }
+    .aq-container.neon {
+        border-color: var(--aqua-primary-600);
+        color: var(--aqua-primary-200);
+        text-shadow: 0 0 8px var(--aqua-primary-200);
+    }
+    .aq-container-badge {
+        background: var(--aqua-secondary-700);
+    }
+}
+
+/*==================== REDUCED MOTION ====================*/
+@media (prefers-reduced-motion: reduce) {
+    .aq-container,
+    .aq-container-header,
+    .aq-container-body,
+    .aq-container-footer,
+    .aq-container-badge {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/*==================== HIGH CONTRAST ====================*/
+@media (prefers-contrast: high) {
+    .aq-container {
+        border: 3px solid var(--aqua-primary-400);
+        box-shadow: none;
+    }
+}
+
+/*==================== UTILITY CLASSES ====================*/
+.aq-container.centered { align-items: center; justify-content: center; text-align: center; }
+.aq-container.rounded { border-radius: var(--aqua-radius-full); }
+.aq-container.square { border-radius: var(--aqua-radius); }
+.aq-container.no-shadow { box-shadow: none; }
+
+/*==================== CUSTOM SCROLLBAR FOR CONTAINER ====================*/
+.aq-container::-webkit-scrollbar { width: 8px; }
+.aq-container::-webkit-scrollbar-track { background: transparent;}
+.aq-container::-webkit-scrollbar-thumb { background: var(--aqua-border-primary); border-radius: var(--aqua-radius-full);}
+.aq-container { scrollbar-width: thin; scrollbar-color: var(--aqua-border-primary) transparent; }
