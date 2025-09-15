@@ -1,0 +1,452 @@
+
+        /* =======================================================================
+        AQUASCRIPTCSS ULTRA ADVANCED GRID SYSTEM v2.0
+        ======================================================================= */
+
+        /* ==================== GRID BASE STYLES ==================== */
+        .aq-grid {
+            /* Layout */
+            display: grid;
+            
+            /* Spacing */
+            gap: var(--aqua-space-6);
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+            
+            /* Performance */
+            will-change: grid-template-columns, gap;
+            position: relative;
+        }
+
+        /* ==================== GRID COLUMNS SYSTEM ==================== */
+        /* Basic column grids */
+        .aq-grid.cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .aq-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .aq-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .aq-grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .aq-grid.cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        .aq-grid.cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .aq-grid.cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        .aq-grid.cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+        .aq-grid.cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+        .aq-grid.cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+        .aq-grid.cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); }
+        .aq-grid.cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+
+        /* Auto-fit grids */
+        .aq-grid.auto-fit { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .aq-grid.auto-fit-sm { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .aq-grid.auto-fit-md { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .aq-grid.auto-fit-lg { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+        .aq-grid.auto-fit-xl { grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); }
+
+        /* Auto-fill grids */
+        .aq-grid.auto-fill { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+        .aq-grid.auto-fill-sm { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        .aq-grid.auto-fill-md { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+        .aq-grid.auto-fill-lg { grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+        .aq-grid.auto-fill-xl { grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); }
+
+        /* ==================== GRID ROWS SYSTEM ==================== */
+        .aq-grid.rows-1 { grid-template-rows: repeat(1, minmax(0, 1fr)); }
+        .aq-grid.rows-2 { grid-template-rows: repeat(2, minmax(0, 1fr)); }
+        .aq-grid.rows-3 { grid-template-rows: repeat(3, minmax(0, 1fr)); }
+        .aq-grid.rows-4 { grid-template-rows: repeat(4, minmax(0, 1fr)); }
+        .aq-grid.rows-5 { grid-template-rows: repeat(5, minmax(0, 1fr)); }
+        .aq-grid.rows-6 { grid-template-rows: repeat(6, minmax(0, 1fr)); }
+
+        .aq-grid.auto-rows { grid-auto-rows: minmax(0, auto); }
+        .aq-grid.auto-rows-min { grid-auto-rows: min-content; }
+        .aq-grid.auto-rows-max { grid-auto-rows: max-content; }
+        .aq-grid.auto-rows-fit { grid-auto-rows: fit-content(100px); }
+
+        /* ==================== GRID GAP SYSTEM ==================== */
+        .aq-grid.gap-0 { gap: 0; }
+        .aq-grid.gap-1 { gap: var(--aqua-space-1); }
+        .aq-grid.gap-2 { gap: var(--aqua-space-2); }
+        .aq-grid.gap-3 { gap: var(--aqua-space-3); }
+        .aq-grid.gap-4 { gap: var(--aqua-space-4); }
+        .aq-grid.gap-5 { gap: var(--aqua-space-5); }
+        .aq-grid.gap-6 { gap: var(--aqua-space-6); }
+        .aq-grid.gap-8 { gap: var(--aqua-space-8); }
+        .aq-grid.gap-10 { gap: var(--aqua-space-10); }
+        .aq-grid.gap-12 { gap: var(--aqua-space-12); }
+        .aq-grid.gap-16 { gap: var(--aqua-space-16); }
+
+        /* Column and row specific gaps */
+        .aq-grid.col-gap-0 { column-gap: 0; }
+        .aq-grid.col-gap-1 { column-gap: var(--aqua-space-1); }
+        .aq-grid.col-gap-2 { column-gap: var(--aqua-space-2); }
+        .aq-grid.col-gap-3 { column-gap: var(--aqua-space-3); }
+        .aq-grid.col-gap-4 { column-gap: var(--aqua-space-4); }
+        .aq-grid.col-gap-5 { column-gap: var(--aqua-space-5); }
+        .aq-grid.col-gap-6 { column-gap: var(--aqua-space-6); }
+
+        .aq-grid.row-gap-0 { row-gap: 0; }
+        .aq-grid.row-gap-1 { row-gap: var(--aqua-space-1); }
+        .aq-grid.row-gap-2 { row-gap: var(--aqua-space-2); }
+        .aq-grid.row-gap-3 { row-gap: var(--aqua-space-3); }
+        .aq-grid.row-gap-4 { row-gap: var(--aqua-space-4); }
+        .aq-grid.row-gap-5 { row-gap: var(--aqua-space-5); }
+        .aq-grid.row-gap-6 { row-gap: var(--aqua-space-6); }
+
+        /* ==================== GRID ITEMS ==================== */
+        .aq-grid-item {
+            /* Layout */
+            position: relative;
+            
+            /* Transitions */
+            transition: all var(--aqua-duration-300) ease;
+            
+            /* Performance */
+            will-change: transform, opacity;
+        }
+
+        /* Column span utilities */
+        .aq-grid-item.col-span-1 { grid-column: span 1 / span 1; }
+        .aq-grid-item.col-span-2 { grid-column: span 2 / span 2; }
+        .aq-grid-item.col-span-3 { grid-column: span 3 / span 3; }
+        .aq-grid-item.col-span-4 { grid-column: span 4 / span 4; }
+        .aq-grid-item.col-span-5 { grid-column: span 5 / span 5; }
+        .aq-grid-item.col-span-6 { grid-column: span 6 / span 6; }
+        .aq-grid-item.col-span-7 { grid-column: span 7 / span 7; }
+        .aq-grid-item.col-span-8 { grid-column: span 8 / span 8; }
+        .aq-grid-item.col-span-9 { grid-column: span 9 / span 9; }
+        .aq-grid-item.col-span-10 { grid-column: span 10 / span 10; }
+        .aq-grid-item.col-span-11 { grid-column: span 11 / span 11; }
+        .aq-grid-item.col-span-12 { grid-column: span 12 / span 12; }
+        .aq-grid-item.col-span-full { grid-column: 1 / -1; }
+
+        /* Column start/end utilities */
+        .aq-grid-item.col-start-1 { grid-column-start: 1; }
+        .aq-grid-item.col-start-2 { grid-column-start: 2; }
+        .aq-grid-item.col-start-3 { grid-column-start: 3; }
+        .aq-grid-item.col-start-4 { grid-column-start: 4; }
+        .aq-grid-item.col-start-5 { grid-column-start: 5; }
+        .aq-grid-item.col-start-6 { grid-column-start: 6; }
+        .aq-grid-item.col-start-7 { grid-column-start: 7; }
+        .aq-grid-item.col-start-8 { grid-column-start: 8; }
+        .aq-grid-item.col-start-9 { grid-column-start: 9; }
+        .aq-grid-item.col-start-10 { grid-column-start: 10; }
+        .aq-grid-item.col-start-11 { grid-column-start: 11; }
+        .aq-grid-item.col-start-12 { grid-column-start: 12; }
+        .aq-grid-item.col-start-13 { grid-column-start: 13; }
+
+        .aq-grid-item.col-end-1 { grid-column-end: 1; }
+        .aq-grid-item.col-end-2 { grid-column-end: 2; }
+        .aq-grid-item.col-end-3 { grid-column-end: 3; }
+        .aq-grid-item.col-end-4 { grid-column-end: 4; }
+        .aq-grid-item.col-end-5 { grid-column-end: 5; }
+        .aq-grid-item.col-end-6 { grid-column-end: 6; }
+        .aq-grid-item.col-end-7 { grid-column-end: 7; }
+        .aq-grid-item.col-end-8 { grid-column-end: 8; }
+        .aq-grid-item.col-end-9 { grid-column-end: 9; }
+        .aq-grid-item.col-end-10 { grid-column-end: 10; }
+        .aq-grid-item.col-end-11 { grid-column-end: 11; }
+        .aq-grid-item.col-end-12 { grid-column-end: 12; }
+        .aq-grid-item.col-end-13 { grid-column-end: 13; }
+
+        /* Row span utilities */
+        .aq-grid-item.row-span-1 { grid-row: span 1 / span 1; }
+        .aq-grid-item.row-span-2 { grid-row: span 2 / span 2; }
+        .aq-grid-item.row-span-3 { grid-row: span 3 / span 3; }
+        .aq-grid-item.row-span-4 { grid-row: span 4 / span 4; }
+        .aq-grid-item.row-span-5 { grid-row: span 5 / span 5; }
+        .aq-grid-item.row-span-6 { grid-row: span 6 / span 6; }
+        .aq-grid-item.row-span-full { grid-row: 1 / -1; }
+
+        /* Row start/end utilities */
+        .aq-grid-item.row-start-1 { grid-row-start: 1; }
+        .aq-grid-item.row-start-2 { grid-row-start: 2; }
+        .aq-grid-item.row-start-3 { grid-row-start: 3; }
+        .aq-grid-item.row-start-4 { grid-row-start: 4; }
+        .aq-grid-item.row-start-5 { grid-row-start: 5; }
+        .aq-grid-item.row-start-6 { grid-row-start: 6; }
+        .aq-grid-item.row-start-7 { grid-row-start: 7; }
+
+        .aq-grid-item.row-end-1 { grid-row-end: 1; }
+        .aq-grid-item.row-end-2 { grid-row-end: 2; }
+        .aq-grid-item.row-end-3 { grid-row-end: 3; }
+        .aq-grid-item.row-end-4 { grid-row-end: 4; }
+        .aq-grid-item.row-end-5 { grid-row-end: 5; }
+        .aq-grid-item.row-end-6 { grid-row-end: 6; }
+        .aq-grid-item.row-end-7 { grid-row-end: 7; }
+
+        /* ==================== GRID ALIGNMENT ==================== */
+        /* Justify items */
+        .aq-grid.justify-items-start { justify-items: start; }
+        .aq-grid.justify-items-end { justify-items: end; }
+        .aq-grid.justify-items-center { justify-items: center; }
+        .aq-grid.justify-items-stretch { justify-items: stretch; }
+
+        /* Align items */
+        .aq-grid.align-items-start { align-items: start; }
+        .aq-grid.align-items-end { align-items: end; }
+        .aq-grid.align-items-center { align-items: center; }
+        .aq-grid.align-items-stretch { align-items: stretch; }
+        .aq-grid.align-items-baseline { align-items: baseline; }
+
+        /* Justify content */
+        .aq-grid.justify-content-start { justify-content: start; }
+        .aq-grid.justify-content-end { justify-content: end; }
+        .aq-grid.justify-content-center { justify-content: center; }
+        .aq-grid.justify-content-stretch { justify-content: stretch; }
+        .aq-grid.justify-content-space-between { justify-content: space-between; }
+        .aq-grid.justify-content-space-around { justify-content: space-around; }
+        .aq-grid.justify-content-space-evenly { justify-content: space-evenly; }
+
+        /* Align content */
+        .aq-grid.align-content-start { align-content: start; }
+        .aq-grid.align-content-end { align-content: end; }
+        .aq-grid.align-content-center { align-content: center; }
+        .aq-grid.align-content-stretch { align-content: stretch; }
+        .aq-grid.align-content-space-between { align-content: space-between; }
+        .aq-grid.align-content-space-around { align-content: space-around; }
+        .aq-grid.align-content-space-evenly { align-content: space-evenly; }
+
+        /* ==================== GRID ANIMATIONS ==================== */
+        /* Staggered entrance animation */
+        .aq-grid.animate-stagger .aq-grid-item {
+            animation: aq-grid-item-entrance 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes aq-grid-item-entrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .aq-grid.animate-stagger .aq-grid-item:nth-child(1) { animation-delay: 0.1s; }
+        .aq-grid.animate-stagger .aq-grid-item:nth-child(2) { animation-delay: 0.2s; }
+        .aq-grid.animate-stagger .aq-grid-item:nth-child(3) { animation-delay: 0.3s; }
+        .aq-grid.animate-stagger .aq-grid-item:nth-child(4) { animation-delay: 0.4s; }
+        .aq-grid.animate-stagger .aq-grid-item:nth-child(5) { animation-delay: 0.5s; }
+        .aq-grid.animate-stagger .aq-grid-item:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Hover animations */
+        .aq-grid.animate-hover .aq-grid-item {
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        .aq-grid.animate-hover .aq-grid-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            z-index: 10;
+            box-shadow: var(--aqua-shadow-xl);
+        }
+
+        /* Masonry animation */
+        .aq-grid.masonry {
+            grid-template-rows: masonry;
+        }
+
+        .aq-grid.masonry .aq-grid-item {
+            animation: aq-grid-masonry-fall 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        @keyframes aq-grid-masonry-fall {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== GRID LAYOUTS ==================== */
+        /* Masonry layout */
+        .aq-grid.masonry-layout {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: 10px;
+        }
+
+        .aq-grid.masonry-layout .aq-grid-item {
+            grid-row-end: span 20;
+        }
+
+        /* Gallery layout */
+        .aq-grid.gallery {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+        }
+
+        .aq-grid.gallery .aq-grid-item {
+            overflow: hidden;
+            border-radius: var(--aqua-radius-xl);
+        }
+
+        .aq-grid.gallery .aq-grid-item:hover {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        /* Dashboard layout */
+        .aq-grid.dashboard {
+            grid-template-areas:
+                "header header header"
+                "sidebar main main"
+                "sidebar main main"
+                "footer footer footer";
+            grid-template-columns: 300px 1fr 1fr;
+            grid-template-rows: 80px 1fr 1fr 100px;
+            height: 100vh;
+        }
+
+        .aq-grid.dashboard .aq-grid-item.header { grid-area: header; }
+        .aq-grid.dashboard .aq-grid-item.sidebar { grid-area: sidebar; }
+        .aq-grid.dashboard .aq-grid-item.main { grid-area: main; }
+        .aq-grid.dashboard .aq-grid-item.footer { grid-area: footer; }
+
+        /* ==================== GRID RESPONSIVE DESIGN ==================== */
+        /* Responsive columns */
+        @media (max-width: 1024px) {
+            .aq-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .aq-grid.cols-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .aq-grid.cols-8 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .aq-grid.cols-12 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .aq-grid.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .aq-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .aq-grid.cols-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .aq-grid.cols-8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .aq-grid.cols-12 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 640px) {
+            .aq-grid.cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .aq-grid.cols-3 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .aq-grid.cols-4 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .aq-grid.cols-6 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .aq-grid.cols-8 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .aq-grid.cols-12 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        }
+
+        /* Responsive gap */
+        @media (max-width: 768px) {
+            .aq-grid.gap-6 { gap: var(--aqua-space-4); }
+            .aq-grid.gap-8 { gap: var(--aqua-space-5); }
+            .aq-grid.gap-10 { gap: var(--aqua-space-6); }
+        }
+
+        /* ==================== GRID SPECIAL EFFECTS ==================== */
+        /* Glass grid items */
+        .aq-grid-item.glass {
+            background: color-mix(in srgb, var(--aqua-bg-primary) 85%, transparent);
+            backdrop-filter: blur(20px);
+            border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);
+            border-radius: var(--aqua-radius-xl);
+        }
+
+        /* Hover effects */
+        .aq-grid-item.hover-lift {
+            transition: all var(--aqua-duration-300) ease;
+        }
+
+        .aq-grid-item.hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--aqua-shadow-2xl);
+            z-index: 20;
+        }
+
+        .aq-grid-item.hover-glow:hover {
+            box-shadow: 
+                0 0 20px color-mix(in srgb, var(--aqua-primary-500) 30%, transparent),
+                var(--aqua-shadow-lg);
+        }
+
+        /* Gradient overlay */
+        .aq-grid-item.gradient-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                transparent 0%,
+                color-mix(in srgb, var(--aqua-primary-500) 10%, transparent) 100%);
+            opacity: 0;
+            transition: opacity var(--aqua-duration-300) ease;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        .aq-grid-item.gradient-overlay:hover::before {
+            opacity: 1;
+        }
+
+        /* ==================== GRID INTERACTIONS ==================== */
+        /* Draggable grid */
+        .aq-grid.draggable {
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .aq-grid.draggable .aq-grid-item {
+            cursor: grab;
+            transition: transform var(--aqua-duration-200) ease;
+        }
+
+        .aq-grid.draggable .aq-grid-item:active {
+            cursor: grabbing;
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: var(--aqua-shadow-2xl);
+            z-index: 30;
+        }
+
+        /* Resizable grid items */
+        .aq-grid.resizable .aq-grid-item {
+            resize: both;
+            overflow: auto;
+            min-height: 100px;
+            min-width: 100px;
+        }
+
+        /* ==================== GRID ACCESSIBILITY ==================== */
+        .aq-grid:focus-within {
+            outline: 2px solid var(--aqua-primary-500);
+            outline-offset: 2px;
+            border-radius: var(--aqua-radius);
+        }
+
+        .aq-grid-item:focus {
+            outline: 2px solid var(--aqua-primary-500);
+            outline-offset: 2px;
+            z-index: 40;
+        }
+
+        /* ==================== DARK MODE ADJUSTMENTS ==================== */
+        @media (prefers-color-scheme: dark) {
+            .aq-grid-item.glass {
+                background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent);
+                border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 20%, transparent);
+            }
+        }
+
+        /* ==================== REDUCED MOTION SUPPORT ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            .aq-grid,
+            .aq-grid-item {
+                animation: none;
+                transition: none;
+            }
+
+            .aq-grid.animate-stagger .aq-grid-item,
+            .aq-grid.animate-hover .aq-grid-item,
+            .aq-grid.masonry .aq-grid-item {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .aq-grid-item:hover {
+                transform: none;
+            }
+        }
+
+                                            item.style.position = 'relative';
+                
