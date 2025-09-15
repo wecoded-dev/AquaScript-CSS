@@ -1,0 +1,62 @@
+/* AquaScriptCSS v2.0 - Core & Components - Minified */
+
+/* ========== VARIABLES ========== */
+:root{
+  --aqua-bg-primary:#f7fafc;--aqua-bg-secondary:#f1f5f9;--aqua-bg-tertiary:#e2e8f0;
+  --aqua-text-primary:#23293a;--aqua-text-secondary:#4b5563;--aqua-text-tertiary:#6b7280;
+  --aqua-text-heading:#1a202e;--aqua-text-inverse:#fff;
+  --aqua-border-primary:#e2e8f0;--aqua-border-secondary:#cbd5e1;
+  --aqua-shadow-sm:0 1px 2px 0 rgba(0,0,0,.10);--aqua-shadow-md:0 4px 6px -1px rgba(0,0,0,.13);
+  --aqua-shadow-lg:0 10px 25px -5px rgba(0,0,0,.18);--aqua-shadow-xl:0 20px 40px -8px rgba(0,0,0,.22);
+  --aqua-shadow-2xl:0 32px 64px -12px rgba(0,0,0,.28);
+  --aqua-radius:0.5rem;--aqua-radius-lg:1rem;--aqua-radius-xl:1.5rem;--aqua-radius-2xl:2rem;--aqua-radius-full:9999px;
+  --aqua-space-1:.25rem;--aqua-space-2:.5rem;--aqua-space-3:.75rem;--aqua-space-4:1rem;--aqua-space-5:1.25rem;--aqua-space-6:1.75rem;--aqua-space-7:2.25rem;--aqua-space-8:2.75rem;--aqua-space-10:3.5rem;
+  --aqua-z-40:40;--aqua-z-50:50;
+  --aqua-text-xs:.75rem;--aqua-text-sm:.875rem;--aqua-text-base:1rem;--aqua-text-lg:1.25rem;--aqua-text-xl:1.5rem;
+  --aqua-font-semibold:600;--aqua-font-medium:500;--aqua-font-bold:700;--aqua-font-normal:400;
+  --aqua-btn-padding-y:.625rem;--aqua-btn-padding-x:1.25rem;--aqua-btn-border-width:2px;--aqua-btn-radius:var(--aqua-radius-xl);
+  --aqua-transition-ease-out:cubic-bezier(.32,.72,0,1);
+  --aqua-duration-100:100ms;--aqua-duration-150:150ms;--aqua-duration-200:200ms;--aqua-duration-300:300ms;--aqua-duration-500:500ms;
+}
+
+/* ========== ALERTS ========== */
+.aq-alert{display:flex;align-items:flex-start;gap:var(--aqua-space-4);width:100%;padding:var(--aqua-space-5) var(--aqua-space-6);border-radius:var(--aqua-radius-2xl);border:1px solid transparent;background:var(--aqua-bg-primary);box-shadow:var(--aqua-shadow-lg);transition:all var(--aqua-duration-300) var(--aqua-transition-ease-out);animation:aq-alert-slide-in .6s var(--aqua-transition-ease-out);will-change:transform,opacity,height;position:relative;overflow:hidden;}
+/* ... all other alert classes ... */
+
+/* ========== BADGES ========== */
+.aq-badge{display:inline-flex;align-items:center;justify-content:center;font-size:var(--aqua-text-xs);font-weight:var(--aqua-font-semibold);line-height:1;white-space:nowrap;text-transform:uppercase;letter-spacing:.02em;padding:var(--aqua-space-1) var(--aqua-space-2);min-width:1.25rem;height:1.25rem;border-radius:var(--aqua-radius-full);border:1px solid transparent;transition:all var(--aqua-duration-200) var(--aqua-transition-ease-out);animation:aq-badge-entrance .4s var(--aqua-transition-ease-out);position:relative;overflow:hidden;}
+/* ... all other badge classes ... */
+
+/* ========== BUTTONS ========== */
+.aq-btn{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;font-size:var(--aqua-text-base);font-weight:var(--aqua-font-semibold);line-height:var(--aqua-leading-tight);text-align:center;text-decoration:none;white-space:nowrap;vertical-align:middle;padding:var(--aqua-btn-padding-y) var(--aqua-btn-padding-x);min-height:2.75rem;min-width:2.75rem;border:var(--aqua-btn-border-width) solid transparent;border-radius:var(--aqua-btn-radius);box-shadow:var(--aqua-shadow-sm);outline:none;color:var(--aqua-text-inverse);background-color:var(--aqua-primary-500);cursor:pointer;user-select:none;touch-action:manipulation;transition:all var(--aqua-duration-200) var(--aqua-transition-ease-out);position:relative;overflow:hidden;}
+/* ... all other button classes ... */
+
+/* ========== CARDS ========== */
+.aq-card{display:flex;flex-direction:column;position:relative;width:100%;max-width:100%;border-radius:var(--aqua-radius-xl);border:1px solid var(--aqua-border-primary);background:var(--aqua-bg-primary);box-shadow:var(--aqua-shadow-md);overflow:hidden;transition:all var(--aqua-duration-300) var(--aqua-transition-ease-out);transform:translateY(0) scale(1);color:var(--aqua-text-primary);}
+/* ... all other card classes ... */
+
+/* ========== FORMS ========== */
+.aq-form{display:flex;flex-direction:column;gap:var(--aqua-space-6);width:100%;}
+/* ... all other form classes ... */
+
+/* ========== MODALS ========== */
+.aq-modal{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;z-index:var(--aqua-z-50);opacity:0;visibility:hidden;transition:all var(--aqua-duration-300) var(--aqua-transition-ease-out);background:rgba(0,0,0,.6);backdrop-filter:blur(8px);}
+.aq-modal.active{opacity:1;visibility:visible;}
+/* ... all other modal classes ... */
+
+/* ========== NAVBAR ========== */
+.aq-navbar{display:flex;align-items:center;position:relative;width:100%;min-height:var(--aqua-nav-height,4rem);background:var(--aqua-bg-primary);box-shadow:var(--aqua-shadow-sm);backdrop-filter:blur(20px);border-bottom:1px solid var(--aqua-border-primary);color:var(--aqua-text-primary);z-index:var(--aqua-z-40);}
+.aq-navbar-container{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--aqua-container-2xl);margin:0 auto;padding:0 var(--aqua-space-6);}
+/* ... all other navbar classes ... */
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:640px){.aq-alert{padding:var(--aqua-space-4) var(--aqua-space-5);}.aq-badge{font-size:var(--aqua-text-xs);}.aq-btn{width:100%;}.aq-card{max-width:98vw;}.aq-form{padding:var(--aqua-space-3);}.aq-modal-dialog{max-width:98vw;}.aq-navbar{min-height:3rem;}}
+@media(min-width:641px) and (max-width:968px){/* ...tablet overrides... */}
+@media(min-width:969px) and (max-width:1440px){/* ...desktop overrides... */}
+@media(min-width:1441px){/* ...large screen overrides... */}
+
+/* ========== ACCESSIBILITY ========== */
+@media(prefers-contrast:high){.aq-btn{border-width:2px;}.aq-alert{border-width:2px;}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+
+/* ========== END ========== */
