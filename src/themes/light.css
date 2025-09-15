@@ -1,0 +1,192 @@
+/* =======================================================================
+   AQUASCRIPTCSS LIGHT THEME v2.0
+   ======================================================================= */
+
+/* ==================== LIGHT THEME VARIABLES ==================== */
+:root,
+[data-theme="light"] {
+    /* Base Colors */
+    --aqua-bg-primary: #f7fafc;
+    --aqua-bg-secondary: #f1f5f9;
+    --aqua-bg-tertiary: #e2e8f0;
+    --aqua-bg-inverse: #181c24;
+    --aqua-text-primary: #23293a;
+    --aqua-text-secondary: #4b5563;
+    --aqua-text-tertiary: #6b7280;
+    --aqua-text-heading: #1a202e;
+    --aqua-text-inverse: #fff;
+    --aqua-border-primary: #e2e8f0;
+    --aqua-border-secondary: #cbd5e1;
+    --aqua-shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.10);
+    --aqua-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.13);
+    --aqua-shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.18);
+    --aqua-shadow-xl: 0 20px 40px -8px rgba(0,0,0,0.22);
+    --aqua-shadow-2xl: 0 32px 64px -12px rgba(0,0,0,0.28);
+
+    /* Primary Palette */
+    --aqua-primary-50: #e6f3ff;
+    --aqua-primary-100: #cce6ff;
+    --aqua-primary-200: #b3dafe;
+    --aqua-primary-300: #99cdfd;
+    --aqua-primary-400: #80c1fc;
+    --aqua-primary-500: #66b4fb;
+    --aqua-primary-600: #4da8fa;
+    --aqua-primary-700: #339bf9;
+    --aqua-primary-800: #198ff8;
+    --aqua-primary-900: #007bf7;
+
+    /* Secondary Palette */
+    --aqua-secondary-50: #faf5ff;
+    --aqua-secondary-100: #f3e8ff;
+    --aqua-secondary-200: #e9d5ff;
+    --aqua-secondary-300: #d8b4fe;
+    --aqua-secondary-400: #c084fc;
+    --aqua-secondary-500: #a855f7;
+    --aqua-secondary-600: #9333ea;
+    --aqua-secondary-700: #7e22ce;
+    --aqua-secondary-800: #6d28d9;
+    --aqua-secondary-900: #5b21b6;
+
+    /* Accent & Utility */
+    --aqua-success: #10b981;
+    --aqua-warning: #f59e42;
+    --aqua-danger: #ef4444;
+    --aqua-info: #2563eb;
+    --aqua-gray-900: #1a202e;
+    --aqua-gray-400: #a0aec0;
+
+    /* Radius */
+    --aqua-radius: 0.5rem;
+    --aqua-radius-lg: 1rem;
+    --aqua-radius-xl: 1.5rem;
+    --aqua-radius-2xl: 2rem;
+    --aqua-radius-full: 9999px;
+
+    /* Spacing */
+    --aqua-space-1: 0.25rem;
+    --aqua-space-2: 0.5rem;
+    --aqua-space-3: 0.75rem;
+    --aqua-space-4: 1rem;
+    --aqua-space-5: 1.25rem;
+    --aqua-space-6: 1.75rem;
+    --aqua-space-7: 2.25rem;
+    --aqua-space-8: 2.75rem;
+    --aqua-space-10: 3.5rem;
+
+    /* Z-index */
+    --aqua-z-40: 40;
+    --aqua-z-50: 50;
+
+    /* Typography */
+    --aqua-text-xs: 0.75rem;
+    --aqua-text-sm: 0.875rem;
+    --aqua-text-base: 1rem;
+    --aqua-text-lg: 1.25rem;
+    --aqua-text-xl: 1.5rem;
+    --aqua-font-semibold: 600;
+    --aqua-font-medium: 500;
+    --aqua-font-bold: 700;
+    --aqua-font-normal: 400;
+
+    /* Misc */
+    --aqua-btn-padding-y: 0.625rem;
+    --aqua-btn-padding-x: 1.25rem;
+    --aqua-btn-border-width: 2px;
+    --aqua-btn-radius: var(--aqua-radius-xl);
+
+    --aqua-transition-ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+    --aqua-duration-100: 100ms;
+    --aqua-duration-150: 150ms;
+    --aqua-duration-200: 200ms;
+    --aqua-duration-300: 300ms;
+    --aqua-duration-500: 500ms;
+}
+
+/* ==================== COMPONENT OVERRIDES (Light Mode) ==================== */
+
+/* Alerts */
+.aq-alert,
+.aq-alert.glass { background: var(--aqua-bg-secondary); color: var(--aqua-text-primary); }
+.aq-alert.solid { background: var(--aqua-primary-500); color: var(--aqua-text-inverse);}
+.aq-alert.outline { border-color: var(--aqua-primary-300); color: var(--aqua-primary-700); background: transparent;}
+.aq-alert.info { color: var(--aqua-info);}
+.aq-alert.success { color: var(--aqua-success);}
+.aq-alert.warning { color: var(--aqua-warning);}
+.aq-alert.danger { color: var(--aqua-danger);}
+.aq-alert.primary { color: var(--aqua-primary-700);}
+.aq-alert.secondary { color: var(--aqua-secondary-700);}
+.aq-alert-title { color: var(--aqua-text-heading);}
+.aq-alert-description { color: var(--aqua-text-secondary);}
+
+/* Badges */
+.aq-badge { background: var(--aqua-primary-300); color: var(--aqua-text-inverse); border-color: var(--aqua-primary-500);}
+.aq-badge.outline { background: transparent; color: var(--aqua-primary-700); border-color: var(--aqua-primary-400);}
+.aq-badge.success { background: var(--aqua-success); color: var(--aqua-text-inverse);}
+.aq-badge.warning { background: var(--aqua-warning); color: var(--aqua-gray-900);}
+.aq-badge.danger { background: var(--aqua-danger); color: var(--aqua-text-inverse);}
+.aq-badge.info { background: var(--aqua-info); color: var(--aqua-text-inverse);}
+.aq-badge.glass { background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent); color: var(--aqua-primary-600);}
+.aq-badge.subtle { background: color-mix(in srgb, var(--aqua-primary-200) 10%, transparent); color: var(--aqua-primary-700);}
+
+/* Buttons */
+.aq-btn { background-color: var(--aqua-primary-500); color: var(--aqua-text-inverse); border-color: var(--aqua-primary-600);}
+.aq-btn.primary { background-color: var(--aqua-primary-500);}
+.aq-btn.secondary { background-color: var(--aqua-secondary-500);}
+.aq-btn.outline { background-color: transparent; color: var(--aqua-primary-600); border-color: var(--aqua-primary-400);}
+.aq-btn.ghost { background-color: transparent; color: var(--aqua-primary-600);}
+.aq-btn.glass { background: color-mix(in srgb, var(--aqua-primary-500) 20%, transparent); color: var(--aqua-primary-700);}
+.aq-btn.gradient { background: linear-gradient(45deg, var(--aqua-primary-400), var(--aqua-primary-700));}
+.aq-btn.link { color: var(--aqua-primary-600);}
+.aq-btn.success { background-color: var(--aqua-success);}
+.aq-btn.warning { background-color: var(--aqua-warning); color: var(--aqua-gray-900);}
+.aq-btn.danger { background-color: var(--aqua-danger);}
+.aq-btn.info { background-color: var(--aqua-info);}
+
+/* Cards */
+.aq-card { background: var(--aqua-bg-secondary); color: var(--aqua-text-primary); border-color: var(--aqua-border-primary); box-shadow: var(--aqua-shadow-md);}
+.aq-card.elevated { box-shadow: var(--aqua-shadow-2xl);}
+.aq-card.filled { background: var(--aqua-bg-tertiary);}
+.aq-card.outline { background: transparent; border-color: var(--aqua-border-primary);}
+.aq-card.glass { background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent); border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);}
+.aq-card.gradient { background: linear-gradient(135deg, var(--aqua-primary-50) 0%, var(--aqua-secondary-50) 100%); color: var(--aqua-primary-800);}
+.aq-card-title { color: var(--aqua-text-heading);}
+.aq-card-subtitle { color: var(--aqua-primary-700);}
+
+/* Forms */
+.aq-form-control { background: var(--aqua-bg-primary); color: var(--aqua-text-primary); border-color: var(--aqua-border-primary);}
+.aq-form-control.outline { background: transparent; border-color: var(--aqua-primary-400);}
+.aq-form-control.filled { background: var(--aqua-bg-secondary);}
+.aq-form-control.glass { background: color-mix(in srgb, var(--aqua-bg-primary) 80%, transparent); border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);}
+.aq-form-label { color: var(--aqua-text-secondary);}
+.aq-form-section { background: var(--aqua-bg-secondary);}
+.aq-form-feedback.valid { color: var(--aqua-success);}
+.aq-form-feedback.invalid { color: var(--aqua-danger);}
+
+/* Modals */
+.aq-modal { background: rgba(247,250,252,0.96);}
+.aq-modal-dialog { background: var(--aqua-bg-primary); color: var(--aqua-text-primary); border-color: var(--aqua-border-primary);}
+.aq-modal.glass .aq-modal-dialog { background: color-mix(in srgb, var(--aqua-bg-primary) 90%, transparent); border: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);}
+.aq-modal-footer { background: var(--aqua-bg-secondary);}
+.aq-modal-close { color: var(--aqua-text-secondary); background: transparent;}
+
+/* Navbar */
+.aq-navbar { background: var(--aqua-bg-primary); color: var(--aqua-text-primary); border-bottom: 1px solid var(--aqua-border-primary);}
+.aq-navbar.glass { background: color-mix(in srgb, var(--aqua-bg-primary) 85%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--aqua-border-primary) 30%, transparent);}
+.aq-navbar.solid { background: var(--aqua-primary-600);}
+.aq-navbar-link { color: var(--aqua-text-primary);}
+.aq-navbar-link.active { color: var(--aqua-primary-600);}
+.aq-navbar-dropdown { background: var(--aqua-bg-secondary);}
+.aq-navbar-toggle span { background: var(--aqua-text-primary);}
+
+/* ==================== ACCESSIBILITY & SPECIAL EFFECTS ==================== */
+@media (prefers-contrast: high) {
+    :root {
+        --aqua-border-primary: #000;
+        --aqua-text-primary: #000;
+    }
+}
+
+/* ==================== REDUCED MOTION SUPPORT ==================== */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important;}
+}
