@@ -1,0 +1,54 @@
+/* =======================================================================
+   AquaScriptCSS Large Screens Responsive Overrides
+   Applies to screens above 1440px
+   ======================================================================= */
+
+/* Alerts */
+@media (min-width: 1441px) {
+  .aq-alert { padding: var(--aqua-space-8) var(--aqua-space-10); font-size: 1.5rem; }
+  .aq-alert-container { max-width: 520px; }
+}
+
+/* Badges */
+@media (min-width: 1441px) {
+  .aq-badge { font-size: 1.25rem; padding: 0.625rem 1.25rem; }
+  .aq-badge-group { gap: var(--aqua-space-4); }
+}
+
+/* Buttons */
+@media (min-width: 1441px) {
+  .aq-btn { font-size: 1.5rem; padding: 1.25rem 2.5rem; }
+  .aq-btn-group { gap: var(--aqua-space-4); }
+}
+
+/* Cards */
+@media (min-width: 1441px) {
+  .aq-card { max-width: 900px; font-size: 1.35rem; box-shadow: var(--aqua-shadow-xl); }
+  .aq-card-header, .aq-card-body, .aq-card-footer { padding: var(--aqua-space-8) !important; }
+  .aq-card-img { height: 300px; }
+  .aq-card-group, .aq-card-grid { grid-template-columns: repeat(4, 1fr); gap: var(--aqua-space-8); }
+}
+
+/* Forms */
+@media (min-width: 1441px) {
+  .aq-form, .aq-form-section { width: 60vw; padding: var(--aqua-space-8); gap: var(--aqua-space-8); }
+  .aq-form-control { font-size: 1.25rem; padding: var(--aqua-space-6) var(--aqua-space-8); }
+}
+
+/* Modals */
+@media (min-width: 1441px) {
+  .aq-modal-dialog, .aq-modal-lg .aq-modal-dialog, .aq-modal-xl .aq-modal-dialog {
+    max-width: 1200px; margin: var(--aqua-space-8); padding: var(--aqua-space-10);
+  }
+  .aq-modal-header, .aq-modal-body, .aq-modal-footer { padding-left: var(--aqua-space-8); padding-right: var(--aqua-space-8); }
+  .aq-modal-footer { gap: var(--aqua-space-4); }
+}
+
+/* Navbar */
+@media (min-width: 1441px) {
+  .aq-navbar { min-height: 5rem; }
+  .aq-navbar-container { padding: 0 var(--aqua-space-10); }
+  .aq-navbar-nav, .aq-navbar-actions { gap: var(--aqua-space-4); }
+  .aq-navbar-link { font-size: 1.5rem; }
+  .aq-navbar-toggle { display: none; }
+}
